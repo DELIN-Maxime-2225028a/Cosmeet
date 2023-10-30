@@ -4,7 +4,8 @@
 <body>
     </div>
         <h3><a id="inscription" href="./index.php?url=Inscription">S'INSCRIRE</a> <a id="connexion" href="./index.php?url=Connexion">SE CONNECTER</a> 
-        <a id="utilisateur" href="./index.php?url=Utilisateur">COMPTE</a></h3>
+        <a id="utilisateur" href="./index.php?url=Utilisateur">COMPTE</a>
+        <a id="accueil" href="./index.php">ACCUEIL<a></h3>
     </div>
 </body>
 </html>
