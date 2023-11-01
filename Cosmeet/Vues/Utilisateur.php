@@ -23,7 +23,7 @@ if (isset($A_vue['reussite'])) {
         <div class="overlay modal-trigger"></div>
         <div class="modal" role="dialog" aria-labelledby="modalTitle" aria-describedby="dialogDesc">
             <button aria-label="close modal" class="close-modal modal-trigger">X</button>
-            <h1 id="modalTitle">Modifier le Pseudonyme de votre compte</h1>
+            <h1 id="modalTitle">Modifier votre Pseudonyme </h1>
             <form method="post" action="../Cosmeet/index.php?url=Utilisateur/modifier" enctype="multipart/form-data">
                 <input type="text" name="pseudo" placeholder="Pseudonyme" required>
                 <input type="text" name="email" placeholder="Email" required>
@@ -38,10 +38,10 @@ if (isset($A_vue['reussite'])) {
     <h1 style="color: red;">
         <?php echo $condition ?>
     </h1>
-    <script src="/Cosmeet/JavaScript/Modal.js"></script>
+    <script src="./JavaScript/Modal.js"></script>
 </body>
 
 </html>
 <style>
-    @import url("/Cosmeet/CSS/Utilisateur.css");
+    @import url("./CSS/Utilisateur.css");
 </style>

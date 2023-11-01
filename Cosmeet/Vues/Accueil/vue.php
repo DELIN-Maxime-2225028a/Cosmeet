@@ -14,7 +14,7 @@
         aria-label="close modal"
         class="close-modal modal-trigger">X</button>
 
-        <h1 id="modalTitle">Modifier le Pseudonyme de votre compte</h1>
+        <h1 id="modalTitle">Publication</h1>
         <form method="POST" action="../Cosmeet/index.php?url=Ajout_publication/addPublication" enctype="multipart/form-data">
             <input type="text" name="titre" placeholder="TITRE" required>
             <textarea name="message" placeholder="MESSAGE" required></textarea>
@@ -39,5 +39,5 @@
 </html>
 <script src="/Cosmeet/JavaScript/Modal.js"></script>
 <style>
-    @import url("/Cosmeet/CSS/Accueil.css");
+    @import url("./CSS/Accueil.css");
 </style>

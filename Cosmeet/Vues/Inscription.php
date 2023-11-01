@@ -38,5 +38,5 @@ if (isset($A_vue['reussite'])) {
 </html>
 
 <style>
-    @import url("/Cosmeet/CSS/Inscription.css");
+    @import url("./CSS/Inscription.css");
 </style>

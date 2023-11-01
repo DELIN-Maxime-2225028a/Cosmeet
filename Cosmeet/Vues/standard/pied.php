@@ -6,5 +6,5 @@
 
 </html>
 <style>
-    @import url("/Cosmeet/CSS/Style.css");
+    @import url("../CSS/Style.css");
 </style>
