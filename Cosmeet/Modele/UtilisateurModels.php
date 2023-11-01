@@ -1,5 +1,4 @@
 <?php
-
 require_once 'Noyau/Connection.php';
 class Utilisateur{
     private $pdo;
@@ -34,10 +33,14 @@ class Utilisateur{
     public function modifier($pseudo,$email)
     {
         $S_table = "utilisateurs";
-        $A_parametres = [
+        $data = [
             "pseudonyme" => "$pseudo",
             "email" => "$email",
         ];
-        return $this->pdo->insert($S_table, $A_parametres);
+
+        $userId = $_SESSION['utilisateur']['email'];
+        $where = "email = :email";
+        $data['email'] = $userId;
+        return $this->pdo->update($S_table, $data, $where);
     }
 }

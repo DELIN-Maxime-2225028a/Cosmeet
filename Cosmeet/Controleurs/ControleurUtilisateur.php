@@ -31,20 +31,23 @@ class ControleurUtilisateur {
                 if ($O_Utilisateur->pseudoUtilise($pseudo) && $pseudo != $_SESSION['utilisateur']['pseudo']) {
                     Vue::montrer("UtilisateurModifier", array('erreur' => 'Pseudonyme déjà utilisé'));
                 }
-                elseif ($email != $_SESSION['utilisateur']['email'] && $O_Utilisateur->emailUtiliser($email)) {
-                    Vue::montrer("UtilisateurModifier", array('erreur' => 'Email déjà utilisé'));
+                elseif($pseudo == $_SESSION['utilisateur']['pseudo']){
+                    Vue::montrer("UtilisateurModifier", array('erreur' => 'pseudonyme pas changer'));
+                }
+                elseif ($email != $_SESSION['utilisateur']['email']) {
+                    Vue::montrer("UtilisateurModifier", array('erreur' => 'Email incorect'));
                 }   
                 elseif ($mdp != $_SESSION['utilisateur']['mdp1']) {
                     Vue::montrer("UtilisateurModifier", array('erreur' => 'Mot de passe incorect'));
                 }
                 else{
+                    $O_Utilisateur -> modifier($pseudo,$email);
+                    Vue::montrer('Utilisateur', array('reussite' => 'Modification prise en compte'));
                     $_SESSION['utilisateur'] = array(
                         'pseudo' => $pseudo,
                         'email'=> $email,
+                        'mdp1' => $mdp
                     );
-                    $O_Utilisateur -> modifier($pseudo,$email);
-                    Vue::montrer('Utilisateur', array('reussite' => 'Modification prise en compte'));
-                    
                 }   
         }
     }
