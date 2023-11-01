@@ -6,7 +6,7 @@
 </head>
 
 <body>
-    <button id="add-publication-button" onclick="window.location.href='../Cosmeet/index.php?url=ajout_publication'">Ajouter une publication</button>
+    <button id="add-publication-button" onclick="window.location.href='../Cosmeet/index.php?url=Ajout_publication'">Ajouter une publication</button>
     <div id="publications">
         <?php 
         foreach ($publications as $publication): ?>
@@ -14,7 +14,7 @@
                 <h2><?php echo $publication['titre']; ?></h2>
                 <p><?php echo $publication['message']; ?></p>
             </div>
-        <p>Publié le <?php echo $publication['date']; ?> par <?php echo $publication['auteur']; ?></p>
+        <p>Publié le <?php echo $publication['date_publication']; ?> par <?php echo $publication['auteur']; ?></p>
         <?php endforeach; ?>
     </div>
 </body>

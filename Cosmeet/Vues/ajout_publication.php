@@ -13,7 +13,7 @@ if (isset($A_vue['reussite'])){
 </head>
 <body>
     <div id="formulaire">
-        <form method="POST" action="../Cosmeet/index.php?url=ajout_publication/ajouterPublication" enctype="multipart/form-data">
+        <form method="POST" action="../Cosmeet/index.php?url=Ajout_publication/addPublication" enctype="multipart/form-data">
             
             <div id="Onglets">
                 <h3><a id="Retour" href="../Cosmeet/index.php?url=Accueil">RETOUR</a> <a id="AjoutPublication">AJOUTER UNE PUBLICATION</a></h3>

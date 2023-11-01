@@ -1,7 +1,7 @@
 <?php
 require_once 'Noyau/Connection.php';
 
-class AjoutPublicationModels
+class Ajout_PublicationModels
 {
     private $pdo;
     public function __construct()
@@ -9,7 +9,7 @@ class AjoutPublicationModels
         $this->pdo = Connection::getInstance();     
     }
 
-    public function ajouterPublication($titre, $message, $categorie)
+    public function addPublication($titre, $message, $categorie)
     {
         // last publication id
         $query = "SELECT MAX(id_publication) FROM publications";
@@ -21,7 +21,7 @@ class AjoutPublicationModels
         $newId = $lastId + 1;
 
         // get author session
-        $auteur = $_SESSION['utilisateur'];
+        $auteur = $_SESSION['utilisateur']['pseudo'];
 
         $S_table = "publications";
         $A_parametres = [
@@ -30,7 +30,7 @@ class AjoutPublicationModels
             "message" => "$message",
             "categorie" => "$categorie",
             "auteur" => "$auteur",
-            "date_publication" => date('y-m-d')
+            "date_publication" => date('y-m-d h:i:s')
         ];
         return $this->pdo->insert($S_table, $A_parametres);
     }

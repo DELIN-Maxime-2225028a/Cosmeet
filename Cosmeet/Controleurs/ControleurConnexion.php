@@ -19,7 +19,8 @@ class ControleurConnexion {
                         'email' =>$O_connexion->getEmail($pseudo),
                         'mdp1' => $mdp1
                     );
-                    Vue::montrer('Accueil/vue');
+                    header('Location: ../Cosmeet/index.php?url=Accueil');
+                    exit();
                 }
                 else{
                     Vue::montrer("Connexion", array('erreur'=>'mot de passe mauvais'));
