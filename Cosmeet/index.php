@@ -44,5 +44,5 @@ $contenuPourAffichage = Vue::recupererContenuTampon();
 Vue::montrer('gabarit', array('body' => $contenuPourAffichage));
 
 $_SESSION['derniere_connexion'] = array(
-    "date_derniere_connexion" => date('y-m-d H:i:s')
+    "date_derniere_connexion" => date('d-m-Y H:i:s')
 );
