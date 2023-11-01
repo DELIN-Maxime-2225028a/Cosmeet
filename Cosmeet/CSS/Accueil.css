@@ -114,6 +114,8 @@ body {
 }
 
 
+
+
 .modal-container {
   /* display: none; */
   visibility: hidden;
@@ -162,8 +164,7 @@ body {
   transform: translate(-50%, -50%);
   transition: opacity 0.4s 0.2s ease-out,
   transform 0.4s 0.2s ease-out;
-}
-
+} 
 .close-modal {
   padding: 8px 10px;
   border: none;
@@ -176,6 +177,7 @@ body {
   background: #ff365e;
   color: #fff;
 }
+
 .modal h1 {
   margin-bottom: 10px;
   font-family: Montserrat, sans-serif;
