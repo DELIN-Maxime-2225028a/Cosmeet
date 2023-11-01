@@ -31,9 +31,20 @@
             <div class="publication">
                 <h2><?php echo $publication['titre']; ?></h2>
                 <p><?php echo $publication['message']; ?></p>
-            </div>
-        <p>Publié le <?php echo $publication['date_publication']; ?> par <?php echo $publication['auteur']; ?></p>
-        <?php endforeach; ?>
+                <p>Publié le <?php echo $publication['date_publication']; ?> par <?php echo $publication['auteur']; ?></p>
+                
+                <button id="add-comment-button" onclick="window.location.href='../Cosmeet/index.php?url=Ajout_commentaire&id_publication=<?php echo $publication['id_publication']; ?>'">Ajouter un commentaire</button>                
+                
+                <button class="toggle-comments-button">Commentaires</button>
+                <div class="commentaires" style="display: none;">
+                <?php foreach ($commentaires as $commentaire): ?>
+                    <?php if ($commentaire['id_publication'] == $publication['id_publication']): ?>
+                        <p><?php echo $commentaire['commentaire']; ?> | <?php echo $commentaire['auteur']; ?> |  <?php echo $commentaire['date_commentaire']; ?></p>
+                    <?php endif; ?>
+                <?php endforeach; ?>
+        </div>
+    </div>
+<?php endforeach; ?>
     </div>
 </body>
 </html>

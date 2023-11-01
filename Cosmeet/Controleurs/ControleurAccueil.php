@@ -25,12 +25,18 @@ final class ControleurAccueil
         return $publications->getPublications();
     }
 
+    public function getCommentaires() {
+        $publications = new AccueilModels();
+        return $publications->getCommentaires();
+    }
+
     public function accueil() {
         $publications = $this->getPublications();
+        $commentaires = $this->getCommentaires();
         $derniereConnection = new AccueilModels();
         $derniereConnection->modifierDerniereConnection();
         if (isset($_SESSION['utilisateur'])) {
-            Vue::montrer('Accueil/vue', array('publications' => $publications));
+            Vue::montrer('Accueil/vue', array('publications' => $publications,'commentaires' => $commentaires));
         } else {
             Vue::montrer('Inscription');
         }

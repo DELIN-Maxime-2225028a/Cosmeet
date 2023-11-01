@@ -14,10 +14,17 @@ class AccueilModels
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 
+    function getCommentaires() {
+        $query = "SELECT * FROM commentaires ORDER BY id_publication ASC";
+        $stmt = $this->pdo->getPdo()->prepare($query);
+        $stmt->execute();
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+
     public function modifierDerniereConnection() {
         $S_table = "utilisateurs";
         $data = [
-            "date_derniere_connexion" => date('d-m-y H:i:s')
+            "date_derniere_connexion" => date('y-d-m H:i:s')
         ];
         $userId = $_SESSION['utilisateur']['email'];
         $where = "email = :email";
