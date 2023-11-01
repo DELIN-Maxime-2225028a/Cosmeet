@@ -1,14 +1,15 @@
-/* Apply some basic styling to the body */
+/* Apply dark-themed styling to the body */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
+    font-family: 'Arial', sans-serif;
+    background-color: #111; /* Dark background color */
+    color: #120303; /* Light text color */
     margin: 0;
     padding: 0;
 }
 
-/* Style the main container */
+/* Style the main container with dark violet shades */
 #page {
-    background-color: #fff;
+    background-color: #2a1438; /* Dark violet background */
     margin: 20px auto;
     max-width: 600px;
     padding: 20px;
@@ -19,13 +20,13 @@ body {
 /* Style the form header */
 #formulaire h2 {
     text-align: center;
-    color: #333;
+    color: #b19cd9; /* Violet color */
 }
 
 /* Style form input fields and labels */
 form p {
     margin: 10px 0;
-    color: #333;
+    color: #b19cd9; /* Violet color */
 }
 
 input[type="text"],
@@ -35,14 +36,16 @@ select {
     width: 100%;
     padding: 10px;
     margin-bottom: 15px;
-    border: 1px solid #ccc;
+    border: 1px solid #684c84; /* Dark violet color */
     border-radius: 5px;
+    background-color: #1a1a2e; /* Dark background */
+    color: #912323;
 }
 
-/* Style the submit and reset buttons */
+/* Style the submit and reset buttons with dark violet shades */
 input[type="submit"],
 input[type="reset"] {
-    background-color: #007bff;
+    background-color: #3a86ff; /* Deep blue color for a violet feel */
     color: #fff;
     padding: 10px 20px;
     border: none;
@@ -50,10 +53,10 @@ input[type="reset"] {
     cursor: pointer;
 }
 
-/* Style the "retour" button */
-a button {
-    background-color: #ccc;
-    color: #333;
+/* Style the "retour" button with dark violet shades */
+a.button {
+    background-color: #684c84; /* Dark violet color */
+    color: #fff;
     padding: 10px 20px;
     border: none;
     border-radius: 5px;

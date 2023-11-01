@@ -1,14 +1,15 @@
-/* Apply some basic styling to the body */
+/* Apply space-themed styling to the body */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
+    font-family: 'Arial', sans-serif;
+    background-color: #111;
+    color: #120202;
     margin: 0;
     padding: 0;
 }
 
-/* Style the main container */
+/* Style the main container with dark violet shades */
 #page {
-    background-color: #fff;
+    background-color: #1a1a2e;
     margin: 20px auto;
     max-width: 600px;
     padding: 20px;
@@ -16,16 +17,16 @@ body {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
-/* Style the form header */
+/* Style the form header with a space-like touch */
 #formulaire h2 {
     text-align: center;
-    color: #333;
+    color: #b19cd9; /* Violet color */
 }
 
 /* Style form input fields and labels */
 form p {
     margin: 10px 0;
-    color: #333;
+    color: #b19cd9; /* Violet color */
 }
 
 input[type="text"],
@@ -35,15 +36,17 @@ select {
     width: 100%;
     padding: 10px;
     margin-bottom: 15px;
-    border: 1px solid #ccc;
+    border: 1px solid #684c84; /* Dark violet color */
     border-radius: 5px;
+    background-color: #1a1a2e; /* Dark background */
+    color: #a81d1d;
 }
 
-/* Style the submit and reset buttons */
+/* Style the submit and reset buttons with a space-like appearance */
 input[type="submit"],
 input[type="reset"] {
-    background-color: #007bff;
-    color: #fff;
+    background-color: #3a86ff; /* Deep blue color for a space feel */
+    color: #130d0d;
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
@@ -51,9 +54,9 @@ input[type="reset"] {
 }
 
 /* Style the "retour" button */
-a button {
-    background-color: #ccc;
-    color: #333;
+a.button {
+    background-color: #684c84; /* Dark violet color */
+    color: #fff;
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
