@@ -47,7 +47,7 @@ class ConnexionModels
         return $email;
     }
 
-    public function getDateinscription($pseudo){
+    public function getDateInscription($pseudo){
         $query = "SELECT date_inscription FROM utilisateurs WHERE pseudonyme = :pseudo";
         $stmt = $this->pdo->getPdo()->prepare($query);
         $stmt->bindValue(':pseudo', $pseudo);

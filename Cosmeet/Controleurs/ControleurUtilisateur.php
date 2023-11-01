@@ -29,16 +29,16 @@ class ControleurUtilisateur {
 
             $O_Utilisateur = new Utilisateur();
                 if ($O_Utilisateur->pseudoUtilise($pseudo) && $pseudo != $_SESSION['utilisateur']['pseudo']) {
-                    Vue::montrer("UtilisateurModifier", array('erreur' => 'Pseudonyme déjà utilisé'));
+                    Vue::montrer("Utilisateur", array('erreur' => 'Pseudonyme déjà utilisé'));
                 }
                 elseif($pseudo == $_SESSION['utilisateur']['pseudo']){
-                    Vue::montrer("UtilisateurModifier", array('erreur' => 'pseudonyme pas changer'));
+                    Vue::montrer("Utilisateur", array('erreur' => 'pseudonyme pas changer'));
                 }
                 elseif ($email != $_SESSION['utilisateur']['email']) {
-                    Vue::montrer("UtilisateurModifier", array('erreur' => 'Email incorect'));
+                    Vue::montrer("Utilisateur", array('erreur' => 'Email incorect'));
                 }   
                 elseif ($mdp != $_SESSION['utilisateur']['mdp1']) {
-                    Vue::montrer("UtilisateurModifier", array('erreur' => 'Mot de passe incorect'));
+                    Vue::montrer("Utilisateur", array('erreur' => 'Mot de passe incorect'));
                 }
                 else{
                     $O_Utilisateur -> modifier($pseudo,$email);
