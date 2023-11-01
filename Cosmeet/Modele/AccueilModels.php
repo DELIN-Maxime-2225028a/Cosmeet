@@ -14,13 +14,16 @@ class AccueilModels
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 
-    public function derniereConnection() {
+    public function modifierDerniereConnection() {
         $S_table = "utilisateurs";
-        $data = array('date_derniere_connexion' => date('d-m-Y H:i:s'));
-        $where = "pseudo = :pseudo";
+        $data = [
+            "date_derniere_connexion" => date('d-m-y H:i:s')
+        ];
+        $userId = $_SESSION['utilisateur']['email'];
+        $where = "email = :email";
+        $data['email'] = $userId;
         return $this->pdo->update($S_table, $data, $where);
     }
 }
-
 
 ?>
