@@ -6,7 +6,34 @@
 </head>
 
 <body>
-    <button id="add-publication-button" onclick="window.location.href='../Cosmeet/index.php?url=Ajout_publication'">Ajouter une publication</button>
+<div class="modal-container">
+      <div class="overlay modal-trigger"></div>
+      <div class="modal" role="dialog" aria-labelledby="modalTitle" aria-describedby="dialogDesc">
+        
+        <button 
+        aria-label="close modal"
+        class="close-modal modal-trigger">X</button>
+
+        <h1 id="modalTitle">Modifier le Pseudonyme de votre compte</h1>
+        <form method="POST" action="../Cosmeet/index.php?url=Ajout_publication/addPublication" enctype="multipart/form-data">
+            <input type="text" name="titre" placeholder="TITRE" required>
+            <textarea name="message" placeholder="MESSAGE" required></textarea>
+            <select name="categorie" required>
+                <option value="">Aucune</option>
+                <option value="jeux vidéos">Jeux vidéos</option>
+                <option value="IRL">IRL</option>
+                <option value="musique">Musique</option>
+                <option value="sport">Sport</option>
+                <option value="créatif">Créatif</option>
+                <!-- Soit il en faut plus, soit les cat"gories seront créées par les gens -->
+            </select>
+
+            <button class="boutonLog" name="boutonLog" type="submit">Publier</button>
+        </form>
+      </div>
+    </div>
+    <button class="modal-btn modal-trigger">Ajouter une publication</button>
+    </div>
     <div id="publications">
         <?php 
         foreach ($publications as $publication): ?>
@@ -18,9 +45,8 @@
         <?php endforeach; ?>
     </div>
 </body>
-
 </html>
-
+<script src="/Cosmeet/JavaScript/Modal.js"></script>
 <style>
     @import url("/Cosmeet/CSS/Accueil.css");
 </style>
