@@ -25,8 +25,8 @@ class ControleurInscription {
                         'pseudo' => $pseudo,
                         'email'=> $email,
                         'mdp1' => $mdp1,
-                        "date_inscription" => date('y-m-d h:i:s'),
-                        "date_derniere_connexion" => date('y-m-d h:i:s')
+                        "date_inscription" => date('Y-m-d H:i:s'),
+                        "date_derniere_connexion" => date('Y-m-d H:i:s')
 
                     );
                     $O_inscription -> inscription($pseudo,$email,$mdp1);

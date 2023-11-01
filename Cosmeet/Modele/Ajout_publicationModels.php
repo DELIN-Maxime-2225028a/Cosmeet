@@ -24,7 +24,7 @@ class Ajout_PublicationModels
             "message" => "$message",
             "categorie" => "$nom_categorie",
             "auteur" => "$auteur",
-            "date_publication" => date('y-m-d h:i:s')
+            "date_publication" => date('Y-m-d H:i:s')
         ];
         return $this->pdo->insert($S_table, $A_parametres);
     }

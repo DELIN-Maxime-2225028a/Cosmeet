@@ -24,13 +24,13 @@ class AccueilModels
     public function modifierDerniereConnection() {
         $S_table = "utilisateurs";
         $data = [
-            "date_derniere_connexion" => date('y-m-d h:i:s')
+            "date_derniere_connexion" => date('Y-m-d H:i:s')
         ];
         $userId = $_SESSION['utilisateur']['email'];
         $where = "email = :email";
         $data['email'] = $userId;
         $_SESSION['derniere_connexion'] = array(
-            "date_derniere_connexion" => date('y-m-d h:i:s')
+            "date_derniere_connexion" => date('Y-m-d H:i:s')
         );
         return $this->pdo->update($S_table, $data, $where);
     }
