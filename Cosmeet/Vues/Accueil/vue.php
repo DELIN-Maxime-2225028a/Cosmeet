@@ -6,6 +6,7 @@
 </head>
 
 <body>
+    <button id="add-publication-button" onclick="window.location.href='ajout_publication.php'">Ajouter une publication</button>
     <div id="publications">
         <?php 
         foreach ($publications as $publication): ?>
