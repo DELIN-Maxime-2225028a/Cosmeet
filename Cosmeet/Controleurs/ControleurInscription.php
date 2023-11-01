@@ -27,7 +27,8 @@ class ControleurInscription {
                         'mdp1' => $mdp1
                     );
                     $O_inscription -> inscription($pseudo,$email,$mdp1);
-                    Vue::montrer('Accueil/vue');
+                    header('Location: ../Cosmeet/index.php?url=Accueil');
+                    exit();
                 }
             
             }

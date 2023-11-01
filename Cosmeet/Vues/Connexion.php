@@ -17,7 +17,7 @@ if (isset($A_vue['reussite'])){
             
             <div id="Onglets">
                 <h3><a id="Connexion">SE CONNECTER</a> <a id="Inscription" href="../Cosmeet/index.php?url=Inscription"> S'INSCRIRE</a></h3>
-            </div>  
+            </div>
             <input type="text" name="pseudo" placeholder="PSEUDO"required>
             <input type="password" name="mdp1" placeholder="MOT DE PASSE"required>
 

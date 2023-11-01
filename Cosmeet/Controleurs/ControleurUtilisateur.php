@@ -31,7 +31,7 @@ class ControleurUtilisateur {
                 if ($O_Utilisateur->pseudoUtilise($pseudo) && $pseudo != $_SESSION['utilisateur']['pseudo']) {
                     Vue::montrer("UtilisateurModifier", array('erreur' => 'Pseudonyme déjà utilisé'));
                 }
-                elseif($pseudo = $_SESSION['utilisateur']['pseudo']){
+                elseif($pseudo == $_SESSION['utilisateur']['pseudo']){
                     Vue::montrer("UtilisateurModifier", array('erreur' => 'pseudonyme pas changer'));
                 }
                 elseif ($email != $_SESSION['utilisateur']['email']) {
