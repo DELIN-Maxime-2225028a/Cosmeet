@@ -18,7 +18,7 @@
         <form method="POST" action="../Cosmeet/index.php?url=Ajout_publication/addPublication" enctype="multipart/form-data">
             <input type="text" name="titre" placeholder="TITRE" required>
             <textarea name="message" placeholder="MESSAGE" required></textarea>
-            <input type="text" name="categorie" required>
+            <input type="text" name="categorie" placeholder="CATEGORIE" required>
             <button class="boutonLog" name="boutonLog" type="submit">Publier</button>
         </form>
       </div>
