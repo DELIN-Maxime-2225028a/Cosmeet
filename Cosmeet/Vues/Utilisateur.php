@@ -10,24 +10,36 @@ if (isset($A_vue['reussite'])){
 <html>
 <head>
 </head>
-<body>
-<div class="container">
-    
+    <body>
     <div class="user-info">
         <p>Nom d'utilisateur : <?= $_SESSION['utilisateur']['pseudo'] ?></p>
         <p>Adresse email : <?= $_SESSION['utilisateur']['email'] ?></p>
     </div>
-    <div class="actions">
-        <a href="../Cosmeet/index.php?url=Utilisateur/modifierPage" class="btn">Modifier les informations</a>
-        <a href="../Cosmeet/index.php?url=Utilisateur/deco" class="btn">Déconnexion</a>
+    <div class="modal-container">
+      <div class="overlay modal-trigger"></div>
+      <div class="modal" role="dialog" aria-labelledby="modalTitle" aria-describedby="dialogDesc">
+        <button 
+        aria-label="close modal"
+        class="close-modal modal-trigger">X</button>
+        <h1 id="modalTitle">Modifier le Pseudonyme de votre compte</h1>
+            <form method="post" action="../Cosmeet/index.php?url=Utilisateur/modifier" enctype="multipart/form-data">
+                <input type="text" name="pseudo" placeholder="Pseudonyme" required>
+                <input type="text" name="email" placeholder="Email" required>
+                <input type="password" name="mdp" placeholder="Mot de passe pour confirmer" required>
+                <button class="boutonLog" name="boutonLog" type="submit">Valider</button>
+            </form>
+      </div>
     </div>
+    <button class="modal-btn modal-trigger">Modifier le Pseudonyme</button>
+    </div>
+    <button id="actions" onclick="window.location.href='../Cosmeet/index.php?url=Utilisateur/deco'">Déconnexion</button>
     <h1 style="color: red;">
                 <?php echo $condition ?>
     </h1>
-</div>
+<script src="/Cosmeet/JavaScript/Modal.js"></script>
 </body>
 </html>
 <style>
-    @import url("/Cosmeet/CSS/style.css");
+    @import url("/Cosmeet/CSS/Utilisateur.css");
 </style>
 
