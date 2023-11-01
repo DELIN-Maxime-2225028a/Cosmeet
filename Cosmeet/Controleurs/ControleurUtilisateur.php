@@ -46,8 +46,12 @@ class ControleurUtilisateur {
                     $_SESSION['utilisateur'] = array(
                         'pseudo' => $pseudo,
                         'email'=> $email,
-                        'mdp1' => $mdp
+                        'mdp1' => $mdp,
+                        "date_inscription" => $O_Utilisateur -> getDateinscription($pseudo),
+                        "date_derniere_connexion" => date('y-m-d h:i:s')
                     );
+                    header('Location: ../Cosmeet/index.php?url=Utilisateur');
+                    exit;
                 }   
         }
     }

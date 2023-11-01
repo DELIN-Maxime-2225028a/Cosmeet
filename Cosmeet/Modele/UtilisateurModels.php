@@ -43,4 +43,13 @@ class Utilisateur{
         $data['email'] = $userId;
         return $this->pdo->update($S_table, $data, $where);
     }
+
+    public function getDateinscription($pseudo){
+        $query = "SELECT date_inscription FROM utilisateurs WHERE pseudonyme = :pseudo";
+        $stmt = $this->pdo->getPdo()->prepare($query);
+        $stmt->bindValue(':pseudo', $pseudo);
+        $stmt->execute();
+        $date_inscription = $stmt->fetchColumn();
+        return $date_inscription;
+    }
 }

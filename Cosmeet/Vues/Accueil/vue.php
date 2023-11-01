@@ -18,16 +18,7 @@
         <form method="POST" action="../Cosmeet/index.php?url=Ajout_publication/addPublication" enctype="multipart/form-data">
             <input type="text" name="titre" placeholder="TITRE" required>
             <textarea name="message" placeholder="MESSAGE" required></textarea>
-            <select name="categorie" required>
-                <option value="">Aucune</option>
-                <option value="jeux vidéos">Jeux vidéos</option>
-                <option value="IRL">IRL</option>
-                <option value="musique">Musique</option>
-                <option value="sport">Sport</option>
-                <option value="créatif">Créatif</option>
-                <!-- Soit il en faut plus, soit les cat"gories seront créées par les gens -->
-            </select>
-
+            <input type="text" name="categorie" required>
             <button class="boutonLog" name="boutonLog" type="submit">Publier</button>
         </form>
       </div>
