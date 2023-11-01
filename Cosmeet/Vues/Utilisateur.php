@@ -43,5 +43,5 @@ if (isset($A_vue['reussite'])) {
 
 </html>
 <style>
-    @import url("/Cosmeet/CSS/Utilisateur.css");
+    @import url("../CSS/Style.css");
 </style>
