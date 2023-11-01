@@ -30,7 +30,7 @@ class Utilisateur{
         return $result > 0;
     }
 
-    public function modifier($pseudo,$email)
+    public function modifierpseudo($pseudo,$email)
     {
         $S_table = "utilisateurs";
         $data = [

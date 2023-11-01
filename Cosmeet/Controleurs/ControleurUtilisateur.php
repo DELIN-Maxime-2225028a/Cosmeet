@@ -15,7 +15,6 @@ class ControleurUtilisateur {
     public function decoAction() {
         unset($_SESSION['utilisateur']);
         Vue::montrer('Connexion');
-
     }
 
     public function modifierPageAction(){
@@ -41,7 +40,7 @@ class ControleurUtilisateur {
                     Vue::montrer("Utilisateur", array('erreur' => 'Mot de passe incorect'));
                 }
                 else{
-                    $O_Utilisateur -> modifier($pseudo,$email);
+                    $O_Utilisateur -> modifierpseudo($pseudo,$email);
                     Vue::montrer('Utilisateur', array('reussite' => 'Modification prise en compte'));
                     $_SESSION['utilisateur'] = array(
                         'pseudo' => $pseudo,

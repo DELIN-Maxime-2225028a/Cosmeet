@@ -17,7 +17,7 @@ if (isset($A_vue['reussite'])) {
         <p>Nom d'utilisateur : <?= $_SESSION['utilisateur']['pseudo'] ?></p>
         <p>Adresse email : <?= $_SESSION['utilisateur']['email'] ?></p>
         <p>Date inscription : <?= $_SESSION['utilisateur']['date_inscription'] ?></p>
-        <p>Dernier connection : <?= $_SESSION['utilisateur']['date_derniere_connexion'] ?></p>
+        <p>Dernier connection : <?= $_SESSION['derniere_connexion']['date_derniere_connexion'] ?></p>
     </div>
     <div class="modal-container">
         <div class="overlay modal-trigger"></div>
