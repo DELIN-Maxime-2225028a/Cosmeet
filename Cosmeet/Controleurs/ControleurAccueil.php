@@ -24,10 +24,13 @@ final class ControleurAccueil
         $publications = new AccueilModels();
         return $publications->getPublications();
     }
+
     public function accueil() {
         $publications = $this->getPublications();
         if (isset($_SESSION['utilisateur'])) {
             Vue::montrer('Accueil/vue', array('publications' => $publications));
+            $derniereConnection = new AccueilModels();
+            $derniereConnection->derniereConnection();
         } else {
             Vue::montrer('Inscription');
         }
