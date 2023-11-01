@@ -36,5 +36,5 @@ if (isset($A_vue['reussite'])) {
 </html>
 
 <style>
-    @import url("../CSS/Connexion.css");
+    @import url("/Cosmeet/CSS/Connexion.css");
 </style>

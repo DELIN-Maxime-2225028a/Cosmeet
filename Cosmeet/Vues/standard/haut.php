@@ -11,5 +11,5 @@
 
 </html>
 <style>
-    @import url("../../CSS/Style.css");
+    @import url("/Cosmeet/CSS/Style.css");
 </style>

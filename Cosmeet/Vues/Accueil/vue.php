@@ -39,5 +39,5 @@
 </html>
 <script src="/Cosmeet/JavaScript/Modal.js"></script>
 <style>
-    @import url("../../CSS/Acceuil.css");
+    @import url("/Cosmeet/CSS/Accueil.css");
 </style>
