@@ -24,7 +24,7 @@ class AccueilModels
     public function modifierDerniereConnection() {
         $S_table = "utilisateurs";
         $data = [
-            "date_derniere_connexion" => date('y-d-m H:i:s')
+            "date_derniere_connexion" => date('y-m-d h:i:s')
         ];
         $userId = $_SESSION['utilisateur']['email'];
         $where = "email = :email";
