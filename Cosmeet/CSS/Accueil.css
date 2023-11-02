@@ -101,6 +101,12 @@ a button {
     border: 1px solid #ccc;
 }
 
+#Afficher_plus {
+  display: block;
+  width: 100px; /* ajustez ceci selon vos besoins */
+  margin: 0 auto 20px auto;
+}
+
 .text-style {
   text-decoration: none; 
   color: inherit;     

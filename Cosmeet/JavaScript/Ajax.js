@@ -18,7 +18,7 @@ function AfficherPosts() {
 
             // Optionnel: si aucune donnée n'est retournée, désactiver le bouton Load More
             if(this.responseText.trim() === "") {
-                document.getElementById('Afficher plus').style.display = 'none';
+                document.getElementById('Afficher_plus').style.display = 'none';
             }
         }
     }

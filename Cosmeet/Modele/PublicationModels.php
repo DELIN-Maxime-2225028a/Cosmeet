@@ -30,7 +30,7 @@ class PublicationModels
     }
 
     public function CategorieExiste($nom_categorie){
-        $query = "SELECT count(*) FROM categorie WHERE nom_categorie = :nom_categorie";
+        $query = "SELECT count(*) FROM categories WHERE nom_categorie = :nom_categorie";
         $stmt = $this->pdo->getPdo()->prepare($query);
         $stmt->bindValue(':nom_categorie', $nom_categorie);
         $stmt->execute();
@@ -40,12 +40,12 @@ class PublicationModels
 
     public function addCategorie($nom_categorie, $description_categorie)
     {
-        $query = "SELECT MAX(id_categorie) FROM categorie";
+        $query = "SELECT MAX(id_categorie) FROM categories";
         $stmt = $this->pdo->getPdo()->prepare($query);
         $stmt->execute();
         $lastId = $stmt->fetchColumn();
         $newId = $lastId + 1;
-        $S_table = "categorie";
+        $S_table = "categories";
         $A_parametres = [
             "id_categorie" => $newId,
             "nom_categorie" => "$nom_categorie",

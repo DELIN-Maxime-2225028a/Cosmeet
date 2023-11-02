@@ -24,8 +24,9 @@
 
     <div id="publications">
     </div>
+    <button class="Afficher_plus" id="Afficher_plus" onclick="AfficherPosts()">Afficher plus</button>
 
-    <button id="Afficher plus" onclick="AfficherPosts()">Afficher plus</button>
+    
 </body>
 
 </html>

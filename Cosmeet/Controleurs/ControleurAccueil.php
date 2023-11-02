@@ -41,13 +41,5 @@ final class ControleurAccueil
             Vue::montrer('Inscription');
         }
     }
-
-    public function inscription() {
-        Vue::montrer('Inscription/vue');
-    }
-
-    public function connexion() {
-        Vue::montrer('Connexion/vue');
-    }
     
 }
