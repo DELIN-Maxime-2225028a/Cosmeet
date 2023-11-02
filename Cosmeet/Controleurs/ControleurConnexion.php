@@ -19,7 +19,7 @@ class ControleurConnexion {
                         'email' =>$O_connexion->getEmail($pseudo),
                         'mdp1' => $mdp1,
                         "date_inscription" => $O_connexion -> getDateInscription($pseudo),
-                        "date_derniere_connexion" => date('y-m-d H:i:s')
+                        "date_derniere_connexion" => date('Y-m-d H:i:s')
                     );
                     header('Location: ../Cosmeet/index.php?url=Accueil');
                     exit();
