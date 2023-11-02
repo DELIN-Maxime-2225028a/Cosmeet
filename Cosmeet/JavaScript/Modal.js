@@ -17,10 +17,3 @@ document.querySelectorAll('.toggle-comments-button').forEach(function(button) {
       }
   });
 });
-
-function askForDescription(e) {
-  e.preventDefault();
-  var description = prompt("Veuillez entrer une description pour la nouvelle catégorie :");
-  document.getElementById('description_categorie').value = description;
-  e.target.form.submit();
-}

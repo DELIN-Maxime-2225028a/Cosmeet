@@ -20,20 +20,23 @@ final class ControleurAccueil
         }
     }
 
-    public function publicationsParCategorie($categorie) {
-        $model = new AccueilModels();
-        $publications = $model->getPublicationsByCategorie($categorie);
-        Vue::montrer('Accueil/vue', array('publications' => $publications));
+    public function getPublications() {
+        $publications = new AccueilModels();
+        return $publications->getPublications();
+    }
+
+    public function getCommentaires() {
+        $publications = new AccueilModels();
+        return $publications->getCommentaires();
     }
 
     public function accueil() {
-        $model = new AccueilModels();
-        $categories = $model->getAllCategories();
-        $publications = $model->getPublications();
-        $commentaires = $model->getCommentaires();
-        $model->modifierDerniereConnection();
+        $publications = $this->getPublications();
+        $commentaires = $this->getCommentaires();
+        $derniereConnection = new AccueilModels();
+        $derniereConnection->modifierDerniereConnection();
         if (isset($_SESSION['utilisateur'])) {
-            Vue::montrer('Accueil/vue', array('publications' => $publications,'commentaires' => $commentaires, 'categories' => $categories));
+            Vue::montrer('Accueil/vue', array('publications' => $publications,'commentaires' => $commentaires));
         } else {
             Vue::montrer('Inscription');
         }

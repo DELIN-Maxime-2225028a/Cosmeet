@@ -6,13 +6,6 @@
 </head>
 
 <body>
-<select id="categorie-select" onchange="window.location.href=this.value;">
-    <option value="">Aucune</option>
-    <?php foreach ($categories as $categorie): ?>
-        <option value="./index.php?categorie=<?= $categorie['id_categorie'] ?>"><?= $categorie['nom_categorie'] ?></option>
-    <?php endforeach; ?>
-</select>
-
 <div class="modal-container">
       <div class="overlay modal-trigger"></div>
       <div class="modal" role="dialog" aria-labelledby="modalTitle" aria-describedby="dialogDesc">
@@ -24,9 +17,8 @@
             <input type="text" name="titre" placeholder="TITRE" required>
             <textarea name="message" placeholder="MESSAGE" required></textarea>
             <input type="text" name="categorie" placeholder="CATEGORIE" required>
-            <input type="hidden" id="description_categorie" name="description_categorie">
-            <button class="boutonLog" name="boutonLog" type="submit" onclick="askForDescription(event)">Publier</button>
-        </form>  
+            <button class="boutonLog" name="boutonLog" type="submit">Publier</button>
+        </form>
       </div>
     </div>
     <button class="modal-btn modal-trigger">Ajouter une publication</button>
