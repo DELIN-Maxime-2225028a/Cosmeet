@@ -28,7 +28,7 @@ class Ajout_commentaireModels
             "commentaire" => "$commentaire",
             "id_publication" => "$id_publication",
             "auteur" => "$auteur",
-            "date_commentaire" => date('Y-m-d H:i:s')
+            "date_commentaire" => date('y-d-m H:i:s')
         ];
         return $this->pdo->insert($S_table, $A_parametres);
     }

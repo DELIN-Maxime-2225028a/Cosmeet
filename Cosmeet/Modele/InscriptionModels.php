@@ -26,8 +26,8 @@ class InscriptionModels
             "pseudonyme" => "$pseudo",
             "email" => "$email",
             "mot_de_passe" => "$mdp1",
-            "date_inscription" => date('Y-m-d H:i:s'),
-            "date_derniere_connexion" => date('Y-m-d H:i:s')
+            "date_inscription" => date('y-m-d H:i:s'),
+            "date_derniere_connexion" => date('y-m-d H:i:s')
         ];
         return $this->pdo->insert($S_table, $A_parametres);
     }
