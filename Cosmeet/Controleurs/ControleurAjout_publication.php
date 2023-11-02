@@ -9,13 +9,17 @@ class ControleurAjout_publication {
     public function addPublicationAction() {
         $titre = $_POST['titre'];
         $message = $_POST['message'];
-        $nom_categorie = $_POST['categorie']; 
-        $O_ajoutpublication = new Ajout_PublicationModels();
-        if ($O_ajoutpublication ->CategorieExiste($nom_categorie))
-            if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-                $model = new Ajout_PublicationModels();
-                $model->addPublication($titre, $message, $nom_categorie);
-                header('Location: index.php?url=Accueil');
+        $nom_categorie = $_POST['categorie'];
+        $description_categorie = $_POST['description_categorie'];
+        
+        $model = new Ajout_PublicationModels();
+        if (!$model->CategorieExiste($nom_categorie)) {
+            $model->addCategorie($nom_categorie, $description_categorie);
+        }
+        
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $model->addPublication($titre, $message, $nom_categorie);
+            header('Location: index.php?url=Accueil');
         } else {
             Vue::montrer("Accueil", array('erreur' => 'La categorie n\'existe pas'));
         }
