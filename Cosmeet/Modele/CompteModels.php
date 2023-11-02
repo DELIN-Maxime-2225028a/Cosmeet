@@ -1,14 +1,14 @@
 <?php
 require_once 'Noyau/Connection.php';
 
-class ConnexionModels
+class CompteModels
 {
     private $pdo;
     public function __construct()     {
         $this->pdo = Connection::getInstance();     
     }
 
-public function getEmail($pseudo){
+    public function getEmail($pseudo){
         $query = "SELECT email FROM utilisateurs WHERE pseudonyme = :pseudo";
         $stmt = $this->pdo->getPdo()->prepare($query);
         $stmt->bindValue(':pseudo', $pseudo);
