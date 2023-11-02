@@ -14,6 +14,14 @@ class AccueilModels
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 
+    function getPublications2($start = 0) {
+        $query = "SELECT * FROM publications ORDER BY id_publication DESC LIMIT :start, 3";
+        $stmt = $this->pdo->getPdo()->prepare($query);
+        $stmt->bindValue(':start', $start, PDO::PARAM_INT);
+        $stmt->execute();
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+
     function getCommentaires() {
         $query = "SELECT * FROM commentaires ORDER BY id_publication ASC";
         $stmt = $this->pdo->getPdo()->prepare($query);

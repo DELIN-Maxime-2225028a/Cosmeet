@@ -1,10 +1,11 @@
+document.addEventListener('DOMContentLoaded', AfficherPosts);
 // Index initial pour suivre le nombre de publications déjà affichées
-let currentIndex = 5;
+let currentIndex = 0;
 
 function AfficherPosts() {
-    // Utilisez AJAX pour charger les 5 publications suivantes
+    // Utilisez AJAX pour charger les 3 publications suivantes
     const xhr = new XMLHttpRequest();
-    xhr.open('GET', ' =' + currentIndex, true);
+    xhr.open('GET', 'index.php?url=Accueil/getPublications&start=' + currentIndex, true);
 
     xhr.onload = function() {
         if(this.status === 200) {
@@ -13,7 +14,7 @@ function AfficherPosts() {
             publicationsDiv.innerHTML += this.responseText;
 
             // Incrémentez l'index pour charger les prochains posts la prochaine fois
-            currentIndex += 5;
+            currentIndex += 3;
 
             // Optionnel: si aucune donnée n'est retournée, désactiver le bouton Load More
             if(this.responseText.trim() === "") {

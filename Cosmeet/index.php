@@ -40,5 +40,11 @@ catch (ControleurException $O_exception)
 // Les différentes sous-vues ont été "crachées" dans le tampon d'affichage, on les récupère
 $contenuPourAffichage = Vue::recupererContenuTampon();
 
-// On affiche le contenu dans la partie body du gabarit général
-Vue::montrer('gabarit', array('body' => $contenuPourAffichage));
+// Vérifiez si l'URL actuelle est 'Publication.php'
+if ($S_urlADecortiquer != 'Publication.php') {
+    // On affiche le contenu dans la partie body du gabarit général
+    Vue::montrer('gabarit', array('body' => $contenuPourAffichage));
+} else {
+    // Si l'URL est 'Publication.php', affichez simplement le contenu sans le gabarit
+    echo $contenuPourAffichage;
+}

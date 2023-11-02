@@ -20,23 +20,22 @@ final class ControleurAccueil
         }
     }
 
-    public function getPublications() {
-        $publications = new AccueilModels();
-        return $publications->getPublications();
-    }
+    public function getPublicationsAction() {
+        $start = isset($_GET['start']) ? $_GET['start'] : 0;
+        $model = new AccueilModels();
+        $publications = $model->getPublications2($start);
 
-    public function getCommentaires() {
-        $publications = new AccueilModels();
-        return $publications->getCommentaires();
+        foreach ($publications as $publication) {
+            Vue::montrer('Publication', array('publication' => $publication));
+        }
     }
 
     public function accueil() {
-        $publications = $this->getPublications();
-        $commentaires = $this->getCommentaires();
-        $derniereConnection = new AccueilModels();
-        $derniereConnection->modifierDerniereConnection();
+        $model = new AccueilModels();
+        $commentaires = $model->getCommentaires();
+        $model->modifierDerniereConnection();
         if (isset($_SESSION['utilisateur'])) {
-            Vue::montrer('Accueil/vue', array('publications' => $publications,'commentaires' => $commentaires));
+            Vue::montrer('Accueil/vue', array('commentaires' => $commentaires));
         } else {
             Vue::montrer('Inscription');
         }
