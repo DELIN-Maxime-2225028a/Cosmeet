@@ -1,7 +1,7 @@
 <?php
-require_once 'Modele/Ajout_commentaireModels.php';
+require_once 'Modele/CommentaireModels.php';
 
-class ControleurAjout_commentaire {
+class ControleurCommentaire {
     public function defautAction() {
         $this->addCommentaireAction();
     }
@@ -11,7 +11,7 @@ class ControleurAjout_commentaire {
             $commentaire = $_POST['commentaire'];
             $id_publication = $_POST['id_publication'];
             
-            $model = new Ajout_commentaireModels();
+            $model = new CommentaireModels();
             $model->addCommentaire($commentaire, $id_publication);
             
             header('Location: index.php?url=Accueil');

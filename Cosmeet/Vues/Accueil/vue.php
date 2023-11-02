@@ -13,7 +13,7 @@
         aria-label="close modal"
         class="close-modal modal-trigger">X</button>
         <h1 id="modalTitle">Publication</h1>
-        <form method="POST" action="../Cosmeet/index.php?url=Ajout_publication/addPublication" enctype="multipart/form-data">
+        <form method="POST" action="../Cosmeet/index.php?url=Publication/addPublication" enctype="multipart/form-data">
             <input type="text" name="titre" placeholder="TITRE" required>
             <textarea name="message" placeholder="MESSAGE" required></textarea>
             <input type="text" name="categorie" placeholder="CATEGORIE" required>
@@ -25,29 +25,38 @@
     </div>
 
     <div id="publications">
-        <?php 
-        foreach ($publications as $publication): ?>
+        <?php
+        $start = isset($_GET['start']) ? intval($_GET['start']) : 0;
+        $affichees = array_slice($publications, $start, 3);
+        foreach ($affichees as $publication): ?>
             <div class="publication">
                 <h2><?php echo $publication['titre']; ?></h2>
                 <p><?php echo $publication['message']; ?></p>
                 <p>Publié le <?php echo $publication['date_publication']; ?> par <?php echo $publication['auteur']; ?></p>
-                
-                <button id="add-comment-button" onclick="window.location.href='../Cosmeet/index.php?url=Ajout_commentaire&id_publication=<?php echo $publication['id_publication']; ?>'">Ajouter un commentaire</button>                
-                
+                <button id="add-comment-button" onclick="window.location.href='../Cosmeet/index.php?url=Commentaire&id_publication=<?php echo $publication['id_publication']; ?>'">Ajouter un commentaire</button>
                 <button class="toggle-comments-button">Commentaires</button>
                 <div class="commentaires" style="display: none;">
+
                 <?php foreach ($commentaires as $commentaire): ?>
                     <?php if ($commentaire['id_publication'] == $publication['id_publication']): ?>
                         <p><?php echo $commentaire['commentaire']; ?> | <?php echo $commentaire['auteur']; ?> |  <?php echo $commentaire['date_commentaire']; ?></p>
                     <?php endif; ?>
                 <?php endforeach; ?>
+                <div class="commentaires" style="display: none;">       
+            
+                <?php if ($_SESSION['auteur'] == $publication['auteur']): ?>
+                    <button class="toggle-comments-button">Modifier</button>
+                <?php endif; ?> 
+                </div>
         </div>
     </div>
 <?php endforeach; ?>
-    </div>
+<button id="Afficher plus" onclick="AfficherPosts()">Afficher plus</button>
+</div>
 </body>
 </html>
-<script src="/Cosmeet/JavaScript/Modal.js"></script>
+<script src="./JavaScript/Ajax.js"></script>
+<script src="./JavaScript/Modal.js"></script>
 <style>
     @import url("./CSS/Accueil.css");
 </style>

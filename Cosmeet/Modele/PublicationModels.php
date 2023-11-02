@@ -1,7 +1,7 @@
 <?php
 require_once 'Noyau/Connection.php';
 
-class Ajout_PublicationModels
+class PublicationModels
 {
     private $pdo;
     public function __construct()
