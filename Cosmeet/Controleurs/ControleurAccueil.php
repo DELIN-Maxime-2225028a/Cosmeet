@@ -25,6 +25,7 @@ final class ControleurAccueil
         $model = new AccueilModels();
         $publications = $model->getPublications2($start);
 
+        $_SESSION['afficherGabarit'] = false;
         foreach ($publications as $publication) {
             Vue::montrer('Publication', array('publication' => $publication));
         }

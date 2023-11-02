@@ -40,11 +40,12 @@ catch (ControleurException $O_exception)
 // Les différentes sous-vues ont été "crachées" dans le tampon d'affichage, on les récupère
 $contenuPourAffichage = Vue::recupererContenuTampon();
 
-// Vérifiez si l'URL actuelle est 'Publication.php'
-if ($S_urlADecortiquer != 'Publication.php') {
+if (!isset($_SESSION['afficherGabarit']) || $_SESSION['afficherGabarit']) {
     // On affiche le contenu dans la partie body du gabarit général
     Vue::montrer('gabarit', array('body' => $contenuPourAffichage));
 } else {
-    // Si l'URL est 'Publication.php', affichez simplement le contenu sans le gabarit
+    // Si 'afficherGabarit' est false, affichez simplement le contenu sans le gabarit
     echo $contenuPourAffichage;
+    // Réinitialisez 'afficherGabarit' pour les prochaines requêtes
+    $_SESSION['afficherGabarit'] = true;
 }
