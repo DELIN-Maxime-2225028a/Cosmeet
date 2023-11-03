@@ -101,7 +101,7 @@ a button {
     border: 1px solid #ccc;
 }
 
-#Afficher_plus {
+#bouton_utile {
   display: block;
   width: 100px; /* ajustez ceci selon vos besoins */
   margin: 0 auto 20px auto;

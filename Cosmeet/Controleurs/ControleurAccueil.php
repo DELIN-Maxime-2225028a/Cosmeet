@@ -34,9 +34,10 @@ final class ControleurAccueil
     public function accueil() {
         $model = new AccueilModels();
         $commentaires = $model->getCommentaires();
+        $categories = $model->getCategories();
         $model->modifierDerniereConnection();
         if (isset($_SESSION['utilisateur'])) {
-            Vue::montrer('Accueil/vue', array('commentaires' => $commentaires));
+            Vue::montrer('Accueil/vue', array('commentaires' => $commentaires,'categories' => $categories));
         } else {
             Vue::montrer('Inscription');
         }

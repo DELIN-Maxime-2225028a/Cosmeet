@@ -14,19 +14,23 @@
             <form method="POST" action="../Cosmeet/index.php?url=Publication/addPublication" enctype="multipart/form-data">
                 <input type="text" name="titre" placeholder="TITRE" required>
                 <textarea name="message" placeholder="MESSAGE" required></textarea>
-                <input type="text" name="categorie" placeholder="CATEGORIE" required>
+
+                <select id="categorie" name="categorie">
+                    <option value="">Aucune</option>
+                    <?php foreach ($categories as $categorie) : ?>
+                        <option value="<?= $categorie['nom_categorie'] ?>"><?= $categorie['nom_categorie'] ?></option>
+                    <?php endforeach; ?>
+                </select>
+
                 <button class="boutonLog" name="boutonLog" type="submit">Publier</button>
             </form>
         </div>
     </div>
-    <button class="modal-btn modal-trigger">Ajouter une publication</button>
+    <button id="bouton_utile" class="Afficher_plus" class="modal-btn modal-trigger">Ajouter une publication</button>
     </div>
-
     <div id="publications">
     </div>
-    <button class="Afficher_plus" id="Afficher_plus" onclick="AfficherPosts()">Afficher plus</button>
-
-    
+    <button class="Afficher_plus" id="bouton_utile" onclick="AfficherPosts()">Afficher plus</button>
 </body>
 
 </html>
