@@ -3,7 +3,7 @@ require_once 'Modele/AccueilModels.php';
 final class ControleurAccueil
 {
     public function defautAction() {
-        $this->accueil();
+            $this->accueil();
     }
 
     public function getPublicationsAction() {
@@ -32,13 +32,13 @@ final class ControleurAccueil
     }
 
     public function accueil() {
-        $model = new AccueilModels();
-        $categories = $model->getCategories();
-        $model->modifierDerniereConnection();
         if (isset($_SESSION['utilisateur'])) {
+            $model = new AccueilModels();
+            $categories = $model->getCategories();
+            $model->modifierDerniereConnection();
             Vue::montrer('Accueil/vue', array('categories' => $categories));
         } else {
-            Vue::montrer('Inscription');
+            Vue::montrer("Connexion", array('erreur'=>'Vous n\'êtes pas connecté' ));
         }
     }
     

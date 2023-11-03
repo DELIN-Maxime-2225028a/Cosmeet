@@ -8,7 +8,7 @@ class ControleurUtilisateur {
             $pseudo = $utilisateur['pseudo'];
             Vue::montrer('Utilisateur');
         } else {
-            Vue::montrer("Connexion", array('erreur'=>'Vous n\'êtes pas conecter a un compte' ));
+            Vue::montrer("Connexion", array('erreur'=>'Vous n\'êtes pas connecté' ));
         }
     }
 

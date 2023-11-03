@@ -31,3 +31,6 @@ if (isset($A_vue['reussite'])) {
 </body>
 
 </html>
+<style>
+    @import url("./CSS/Accueil.css");
+</style>

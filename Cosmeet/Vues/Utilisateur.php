@@ -43,5 +43,6 @@ if (isset($A_vue['reussite'])) {
 
 </html>
 <style>
+    @import url("./CSS/Accueil.css");
     @import url("./CSS/Utilisateur.css");
 </style>

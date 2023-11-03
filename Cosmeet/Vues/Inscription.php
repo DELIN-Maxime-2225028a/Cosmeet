@@ -36,7 +36,7 @@ if (isset($A_vue['reussite'])) {
 </body>
 
 </html>
-
 <style>
     @import url("./CSS/Inscription.css");
+    @import url("./CSS/Accueil.css");
 </style>
