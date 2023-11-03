@@ -32,6 +32,17 @@ final class ControleurAccueil
         }
     }
 
+    public function getCategorieAction() {
+        $start = isset($_GET['start']) ? $_GET['start'] : 0;
+        $model = new AccueilModels();
+        $categorie = $model->getCategories2($start);
+        
+        $_SESSION['afficherGabarit'] = false;
+        foreach ($categorie as $categorie) {
+            Vue::montrer('Categorie', array('categorie' => $categorie));
+        }
+    }
+
     public function accueil() {
         $model = new AccueilModels();
         $categories = $model->getCategories();
