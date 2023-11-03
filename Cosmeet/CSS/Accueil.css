@@ -110,7 +110,8 @@ a button {
 .text-style {
   text-decoration: none; 
   color: inherit;     
-  cursor: default;     
+  cursor: default;   
+  font-weight: bold;  
 }
 
 ::before,

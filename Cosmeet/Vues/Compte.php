@@ -14,10 +14,10 @@ if (isset($A_vue['reussite'])) {
 
 <body>
     <div class="user-info">
-        <p>Nom d'utilisateur : <?php $A_vue['pseudo']?></p>
-        <p>Adresse email : <?php $A_vue['email'] ?></p>
-        <p>Date inscription : <?php $A_vue['DateInscription'] ?></p>
-        <p>Dernier connection : <?php $A_vue['DateConnexion']?></p>
+        <p>Nom d'utilisateur : <?php echo $A_vue['pseudo'] ?></p>
+        <p>Adresse email : <?php echo $A_vue['email'] ?></p>
+        <p>Date inscription : <?php echo $A_vue['DateInscription'] ?></p>
+        <p>Dernier connection : <?php echo $A_vue['DateConnexion'] ?></p>
     </div>
 </body>
 

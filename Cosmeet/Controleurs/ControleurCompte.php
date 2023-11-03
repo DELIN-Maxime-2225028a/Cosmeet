@@ -5,23 +5,18 @@ require_once 'Modele/CompteModels.php';
 class ControleurCompte {
 
     public function defautAction() {
-        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            $pseudo = $_POST['auteur'];
-
-            $email = new CompteModels();
-            $email->getEmail($pseudo);
-
-            $DateInscription = new CompteModels();
-            $DateInscription->getDateInscription($pseudo);
-
-            $DateConnexion = new CompteModels();
-            $DateConnexion->getDateConnexion($pseudo);
-
-            Vue::montrer("Compte", array('pseudo'=>'mot','email'=>'mot','DateInscription'=>'mot','DateConnexion'=>'mot'));
+        if (isset($_GET['pseudo'])) {
+            $pseudo = $_GET['pseudo'];
+    
+            $model = new CompteModels();
+            $email = $model->getEmail($pseudo);
+            $DateInscription = $model->getDateInscription($pseudo);
+            $DateConnexion = $model->getDateConnexion($pseudo);
+    
+            Vue::montrer("Compte", array('pseudo'=>$pseudo,'email'=>$email,'DateInscription'=>$DateInscription,'DateConnexion'=>$DateConnexion));
         } else {
             Vue::montrer("Utilisateur");
         }
-        
     }
     
 }
