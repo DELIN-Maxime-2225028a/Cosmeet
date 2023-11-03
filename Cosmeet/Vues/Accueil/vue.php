@@ -26,7 +26,7 @@
             </form>
         </div>
     </div>
-    <button id="bouton_utile" class="Afficher_plus" class="modal-btn modal-trigger">Ajouter une publication</button>
+    <button id="bouton_utile" class="modal-btn modal-trigger">Ajouter une publication</button>
     </div>
     <div id="publications">
     </div>
