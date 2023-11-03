@@ -20,12 +20,11 @@
         <div class="commentaires" style="display: none;">
             <?php foreach ($commentaires as $commentaire) : ?>
                 <?php if ($commentaire['id_publication'] == $publication['id_publication']) : ?>
-                    <p><?php echo $commentaire['commentaire']; ?> | <a class="text-style" href="index.php?url=Compte/&pseudo=<?php echo $commentaire['auteur']; ?>"><?php echo $commentaire['auteur']; ?></a> | <?php echo $commentaire['date_commentaire']; ?></p>
-
+                    <p><?php echo $commentaire['commentaire']; ?> | <a class="text-style" href="index.php?url=Compte/&pseudo=<?php echo $commentaire['auteur']; ?>"><?php echo $commentaire['auteur']; ?></a> | <?php echo $commentaire['date_commentaire']; ?>
                     <?php if ($_SESSION['utilisateur']['pseudo'] == $commentaire['auteur']) : ?>
-                        <button onclick="window.location.href='index.php?url=Commentaire/modifier&id_commentaire=<?php echo $commentaire['id_commentaire']; ?>'">Modifier</button>
+                        <button onclick="window.location.href='index.php?url=ModifierCom/&id_commentaire=<?php echo $commentaire['id_commentaire']; ?>'">Modifier</button>
                     <?php endif; ?>
-
+                    </p>
                 <?php endif; ?>
             <?php endforeach; ?>
         </div>

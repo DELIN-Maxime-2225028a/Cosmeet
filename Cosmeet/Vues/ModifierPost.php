@@ -15,7 +15,7 @@ if (isset($A_vue['reussite'])) {
 
 <body>
     <div id="formulaire">
-        <form method="POST" action="../Cosmeet/index.php?url=ModiferPost/modifierPost" enctype="multipart/form-data">
+        <form method="POST" action="../Cosmeet/index.php?url=Modifer/modifierPost" enctype="multipart/form-data">
             <div id="Onglets">
                 <h3><a id="Retour" href="../Cosmeet/index.php?url=Accueil">RETOUR</a></h3>
             </div>
