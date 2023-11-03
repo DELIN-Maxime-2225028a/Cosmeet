@@ -14,10 +14,11 @@ class AccueilModels
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 
-    function getPublications2($start = 0) {
-        $query = "SELECT * FROM publications ORDER BY id_publication DESC LIMIT :start, 3";
+    function getPublications2($start = 0, $nombre = 3) {
+        $query = "SELECT * FROM publications ORDER BY id_publication DESC LIMIT :start, :nombre";
         $stmt = $this->pdo->getPdo()->prepare($query);
         $stmt->bindValue(':start', $start, PDO::PARAM_INT);
+        $stmt->bindValue(':nombre', $nombre, PDO::PARAM_INT);
         $stmt->execute();
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
@@ -36,10 +37,11 @@ class AccueilModels
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 
-    function getCategories2($start = 0) {
-        $query = "SELECT * FROM categories ORDER BY id_categorie DESC LIMIT :start, 3";
+    function getCategories2($start = 0, $nombre = 5) {
+        $query = "SELECT * FROM categories ORDER BY id_categorie DESC LIMIT :start, :nombre";
         $stmt = $this->pdo->getPdo()->prepare($query);
         $stmt->bindValue(':start', $start, PDO::PARAM_INT);
+        $stmt->bindValue(':nombre', $nombre, PDO::PARAM_INT);
         $stmt->execute();
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }

@@ -1,11 +1,12 @@
 document.addEventListener('DOMContentLoaded', function() {
-    AfficherPosts();
+    AfficherPlusPublications();
+    AfficherPlusCategories();
     addToggleCommentsHandlers();
-    AfficherCategories();
 });
 
 // Index initial pour suivre le nombre de publications déjà affichées
-let currentIndex = 0;
+let currentIndexPost = -3;
+let currentIndexCat = -5;
 
 function addToggleCommentsHandlers() {
     document.querySelectorAll('.toggle-comments-button').forEach(function(button) {
@@ -20,51 +21,92 @@ function addToggleCommentsHandlers() {
     });
 }
 
-function AfficherPosts() {
-    // Utilisez AJAX pour charger les 3 publications suivantes
+
+function AfficherPosts(nombre) {
+    // Utilisez AJAX pour charger un nombre spécifique de publications
     const xhr = new XMLHttpRequest();
-    xhr.open('GET', 'index.php?url=Accueil/getPublications&start=' + currentIndex, true);
+    xhr.open('GET', 'index.php?url=Accueil/getPublications&start=' + currentIndexPost + '&nombre=' + nombre, true);
 
     xhr.onload = function() {
         if(this.status === 200) {
             // Si le retour est succès, ajoutez le contenu à votre div publications
             const publicationsDiv = document.getElementById('publications');
             publicationsDiv.innerHTML += this.responseText;
-
-            // Incrémentez l'index pour charger les prochains posts la prochaine fois
-            currentIndex += 3;
             addToggleCommentsHandlers();
-
-            // Optionnel: si aucune donnée n'est retournée, désactiver le bouton Load More
-            if(this.responseText.trim() === "") {
-                document.getElementById('Afficher_plus').style.display = 'none';
-            }
+        }
+        if(this.responseText.trim() === "") {
+            document.getElementById('Afficher_plus_publications').style.display = 'none';
+            document.getElementById('Afficher_moins_publications').style.display = 'block';
+        } else if (currentIndexPost <= 0) {
+            document.getElementById('Afficher_moins_publications').style.display = 'none';
+            document.getElementById('Afficher_plus_publications').style.display = 'block';
         }
     }
-
     xhr.send();
 }
 
-function AfficherCategories() {
-    // Utilisez AJAX pour charger les 3 publications suivantes
+function AfficherCategories(nombre) {
+    // Utilisez AJAX pour charger un nombre spécifique de catégories
     const xhr = new XMLHttpRequest();
-    xhr.open('GET', 'index.php?url=Accueil/getCategorie&start=' + currentIndex, true);
+    xhr.open('GET', 'index.php?url=Accueil/getCategorie&start=' + currentIndexCat + '&nombre=' + nombre, true);
 
     xhr.onload = function() {
         if(this.status === 200) {
-            // Si le retour est succès, ajoutez le contenu à votre div publications
-            const publicationsDiv = document.getElementById('categorie');
+            // Si le retour est succès, ajoutez le contenu à votre div categories
+            const publicationsDiv = document.getElementById('categories');
             publicationsDiv.innerHTML += this.responseText;
 
-            // Incrémentez l'index pour charger les prochains posts la prochaine fois
-            currentIndex += 3;
-
             if(this.responseText.trim() === "") {
-                document.getElementById('plus').style.display = 'none';
+                document.getElementById('Afficher_plus_categories').style.display = 'none';
+                document.getElementById('Afficher_moins_categories').style.display = 'block';
+            } else if (currentIndexCat <= 0) {
+                document.getElementById('Afficher_moins_categories').style.display = 'none';
+                document.getElementById('Afficher_plus_categories').style.display = 'block';
             }
+
         }
     }
-
     xhr.send();
 }
+
+function AfficherPlusPublications() {
+    // Incrémentez l'index
+    currentIndexPost += 3;
+
+    // Rechargez les publications
+    AfficherPosts(3);
+}
+
+function AfficherPlusCategories() {
+    // Incrémentez l'index
+    currentIndexCat += 5;
+
+    // Rechargez les catégories
+    AfficherCategories(5);
+}
+
+function AfficherMoinsPublications() {
+    currentIndexPost = 0;
+
+    document.getElementById('publications').innerHTML = '';
+
+    // Recharge les publications
+    AfficherPosts(3);
+}
+
+// Définissez les fonctions avant de les utiliser dans les gestionnaires d'événements
+function AfficherMoinsCategories() {
+    currentIndexCat = 0;
+
+    document.getElementById('categories').innerHTML = '';
+
+    // Recharge les catégories
+    AfficherCategories(5);
+}
+
+document.getElementById('Afficher_plus_categories').addEventListener('click', AfficherPlusCategories);
+document.getElementById('Afficher_plus_publications').addEventListener('click', AfficherPlusPublications);
+document.getElementById('Afficher_moins_categories').addEventListener('click', AfficherMoinsCategories);
+document.getElementById('Afficher_moins_publications').addEventListener('click', AfficherMoinsPublications);
+
 

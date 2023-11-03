@@ -101,7 +101,33 @@ a button {
     border: 1px solid #ccc;
 }
 
+.categorie {
+  border: 1px solid #000; /* Ajoute une bordure autour de la catégorie */
+  padding: 10px; /* Ajoute de l'espace à l'intérieur du cadre */
+  margin: 10px auto; /* Ajoute de l'espace en haut et en bas, et centre la div */
+  background-color: #f9f9f9; /* Définit la couleur de fond du cadre */
+  width: 60%; /* Définit la largeur de la div à 80% de la largeur du conteneur parent */
+}
+
+.categorie h3 {
+  margin: 0; /* Supprime la marge autour du titre de la catégorie */
+}
+
+.categorie p {
+  margin-top: 5px; /* Ajoute de l'espace au-dessus de la description de la catégorie */
+}
+
 #bouton_utile {
+  display: block;
+  margin: 0 auto 20px auto;
+}
+
+.Afficher_plus{
+  display: block;
+  margin: 0 auto 20px auto;
+}
+
+.Afficher_moins{
   display: block;
   margin: 0 auto 20px auto;
 }

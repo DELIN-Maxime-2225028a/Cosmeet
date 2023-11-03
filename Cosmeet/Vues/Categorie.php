@@ -6,10 +6,10 @@
 </head>
 
 <body>
-    <div class="categorie">
-        <h2><?php echo $categorie['nom_categorie']; ?></h2>
-        <p><?php echo $categorie['description_categorie']; ?></p>
-    </div>
+<div class="categorie">
+    <h3><a href="index.php?url=Posts/trierParCategorie&categorie=<?= urlencode($categorie['nom_categorie']) ?>"><?php echo $categorie['nom_categorie']; ?></a></h3>
+    <p><?php echo $categorie['description_categorie']; ?></p>
+</div>
 </body>
 
 </html>
