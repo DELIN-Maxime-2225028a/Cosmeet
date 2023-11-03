@@ -29,7 +29,7 @@
     <button id="bouton_utile" class="modal-btn modal-trigger">Ajouter une publication</button>
     </div>
     <div>
-    <div id="categorie"><button class="plus" id="bouton_utile" onclick="AfficherCategories()">Afficher plus</button></div>
+    <div id="categorie"><button class="plus" id="bouton_utile" onclick="AfficherCategories()">plus</button></div>
     <div id="publications"></div>
     </div>
     
