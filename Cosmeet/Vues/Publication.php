@@ -15,7 +15,7 @@
             <button onclick="window.location.href='../Cosmeet/index.php?url=ModifierPost&id_publication=<?php echo $publication['id_publication']; ?>'">Modifier</button>
         <?php endif; ?>
 
-        <button id="add-comment-button" onclick="window.location.href='../Cosmeet/index.php?url=Commentaire&id_publication=<?php echo $publication['id_publication']; ?>'">Ajouter un commentaire</button>
+        <button id="add-comment-button" onclick="window.location.href='../Cosmeet/index.php?url=Commentaire/id_publication=<?php echo $publication['id_publication']; ?>'">Ajouter un commentaire</button>
         <button class="toggle-comments-button">Commentaires</button>
         <div class="commentaires" style="display: none;">
             <?php foreach ($commentaires as $commentaire) : ?>

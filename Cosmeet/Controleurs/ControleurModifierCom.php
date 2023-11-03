@@ -1,5 +1,5 @@
 <?php
-require_once 'Modele/ModifierModels.php';
+require_once 'Modele/ModifierComModels.php';
 
 class ControleurModifierCom {
 
