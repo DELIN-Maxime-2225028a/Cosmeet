@@ -16,7 +16,7 @@ class ControleurCommentaire {
             
             header('Location: index.php?url=Accueil');
         } else {
-            Vue::montrer("Ajout_commentaire");
+            Vue::montrer("Commentaire");
         }
     }
 }

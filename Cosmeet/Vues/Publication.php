@@ -18,11 +18,6 @@
                 <p><?php echo $commentaire['commentaire']; ?> |<a href='../Cosmeet/index.php?url=Compte&auteur=<?php echo $commentaire['auteur']; ?>' class="text-style"><?php echo $commentaire['auteur']; ?> </a> | <?php echo $commentaire['date_commentaire']; ?></p>
             <?php endif; ?>
         <?php endforeach; ?>
-        <div class="commentaires" style="display: none;">
-            <?php if ($_SESSION['auteur'] == $publication['auteur']) : ?>
-                <button class="toggle-comments-button">Modifier</button>
-            <?php endif; ?>
-        </div>
     </div>
 </div>
 </body>

@@ -24,20 +24,20 @@ final class ControleurAccueil
         $start = isset($_GET['start']) ? $_GET['start'] : 0;
         $model = new AccueilModels();
         $publications = $model->getPublications2($start);
-
+        $commentaires = $model->getCommentaires();
+        
         $_SESSION['afficherGabarit'] = false;
         foreach ($publications as $publication) {
-            Vue::montrer('Publication', array('publication' => $publication));
+            Vue::montrer('Publication', array('publication' => $publication,'commentaires' => $commentaires));
         }
     }
 
     public function accueil() {
         $model = new AccueilModels();
-        $commentaires = $model->getCommentaires();
         $categories = $model->getCategories();
         $model->modifierDerniereConnection();
         if (isset($_SESSION['utilisateur'])) {
-            Vue::montrer('Accueil/vue', array('commentaires' => $commentaires,'categories' => $categories));
+            Vue::montrer('Accueil/vue', array('categories' => $categories));
         } else {
             Vue::montrer('Inscription');
         }

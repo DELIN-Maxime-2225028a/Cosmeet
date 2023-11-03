@@ -15,7 +15,7 @@ if (isset($A_vue['reussite'])) {
 
 <body>
     <div id="formulaire">
-        <form method="POST" action="../Cosmeet/index.php?url=Ajout_commentaire/addCommentaire" enctype="multipart/form-data">
+        <form method="POST" action="../Cosmeet/index.php?url=Commentaire/addCommentaire" enctype="multipart/form-data">
             <div id="Onglets">
                 <h3><a id="Retour" href="../Cosmeet/index.php?url=Accueil">RETOUR</a></h3>
             </div>
