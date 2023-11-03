@@ -36,6 +36,14 @@ class AccueilModels
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 
+    function getCategories2($start = 0) {
+        $query = "SELECT * FROM categories ORDER BY id_categorie DESC LIMIT :start, 3";
+        $stmt = $this->pdo->getPdo()->prepare($query);
+        $stmt->bindValue(':start', $start, PDO::PARAM_INT);
+        $stmt->execute();
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+
     public function modifierDerniereConnection() {
         $S_table = "utilisateurs";
         $data = [
