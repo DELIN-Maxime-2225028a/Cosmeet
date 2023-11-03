@@ -19,11 +19,14 @@
             </form>
         </div>
     </div>
-    <button class="Afficher_plus" class="modal-btn modal-trigger">Ajouter une publication</button>
+    <button class="modal-btn modal-trigger">Ajouter une publication</button>
     </div>
+
     <div id="publications">
     </div>
     <button class="Afficher_plus" id="Afficher_plus" onclick="AfficherPosts()">Afficher plus</button>
+
+    
 </body>
 
 </html>
