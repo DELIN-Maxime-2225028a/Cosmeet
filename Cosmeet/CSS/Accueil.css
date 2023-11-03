@@ -102,11 +102,11 @@ a button {
 }
 
 .categorie {
-  border: 1px solid #000; /* Ajoute une bordure autour de la catégorie */
-  padding: 10px; /* Ajoute de l'espace à l'intérieur du cadre */
-  margin: 10px auto; /* Ajoute de l'espace en haut et en bas, et centre la div */
-  background-color: #f9f9f9; /* Définit la couleur de fond du cadre */
-  width: 60%; /* Définit la largeur de la div à 80% de la largeur du conteneur parent */
+  border: 1px solid #000; 
+  padding: 10px; 
+  margin: 10px auto; 
+  background-color: #f9f9f9; 
+  width: 60%; 
 }
 
 .categorie h3 {
@@ -115,7 +115,7 @@ a button {
 }
 
 .categorie p {
-  margin-top: 10px; /* Ajoute de l'espace au-dessus de la description de la catégorie */
+  margin-top: 10px; 
 }
 
 #bouton_utile {
