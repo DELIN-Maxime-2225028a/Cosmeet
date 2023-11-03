@@ -111,10 +111,11 @@ a button {
 
 .categorie h3 {
   margin: 0; /* Supprime la marge autour du titre de la catégorie */
+  text-align: center;
 }
 
 .categorie p {
-  margin-top: 5px; /* Ajoute de l'espace au-dessus de la description de la catégorie */
+  margin-top: 10px; /* Ajoute de l'espace au-dessus de la description de la catégorie */
 }
 
 #bouton_utile {
