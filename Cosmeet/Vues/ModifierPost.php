@@ -23,15 +23,7 @@ if (isset($A_vue['reussite'])) {
             <input type="text" name="titre" placeholder="TITRE" required value="<?php echo $publication['titre']; ?>">
             <textarea name="message" placeholder="MESSAGE" required><?php echo $publication['message']; ?></textarea>
             <select id="categorie" name="categorie">
-                <option value="">
-                    <?php
-                    if ($publication['categorie'] == NULL) {
-                        echo 'Aucune';
-                    } else {
-                        echo $publication['categorie'];
-                    }
-                    ?>
-                </option>
+                <option value="" <?php if ($publication['categorie'] == NULL) echo 'selected'; ?>>Aucune</option>
                 <?php foreach ($categories as $categorie) : ?>
                     <option value="<?= $categorie['nom_categorie'] ?>" <?php if ($categorie['nom_categorie'] == $publication['categorie']) echo 'selected'; ?>><?= $categorie['nom_categorie'] ?></option>
                 <?php endforeach; ?>
