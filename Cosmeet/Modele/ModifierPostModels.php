@@ -11,7 +11,7 @@ class ModifierPostModels
 
     public function modifierPost($id_publication, $titre, $message, $nom_categorie = NULL)
     {
-        $auteur = $_SESSION['utilisateur']['pseudo'];
+        $auteur = $_SESSION['utilisateur']['email'];
         $S_table = "publications";
         $data = [
             "titre" => $titre,
