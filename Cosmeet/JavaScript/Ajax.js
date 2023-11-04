@@ -77,10 +77,10 @@ function AfficherCategories(nombre) {
 
 function AfficherPlusPublications() {
     // Incrémentez l'index
-    currentIndexPost += 3;
+    currentIndexPost += 5;
 
     // Rechargez les publications
-    AfficherPosts(3);
+    AfficherPosts(5);
 }
 
 function AfficherPlusCategories() {
@@ -97,7 +97,7 @@ function AfficherMoinsPublications() {
     document.getElementById('publications').innerHTML = '';
 
     // Recharge les publications
-    AfficherPosts(3);
+    AfficherPosts(5);
 }
 
 // Définissez les fonctions avant de les utiliser dans les gestionnaires d'événements
@@ -131,7 +131,7 @@ document.getElementById('searchButton').addEventListener('click', function() {
             publicationsDiv.id = 'publications';
             publicationsDiv.innerHTML = this.responseText;
             document.body.appendChild(publicationsDiv);
-            
+
             setTimeout(addToggleCommentsHandlers, 100);
         }
     };

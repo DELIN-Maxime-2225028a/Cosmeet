@@ -70,8 +70,9 @@ class AccueilModels
     public function getRecherche($recherche)
     {
         $query = "SELECT * FROM publications
-      JOIN commentaires ON publications.id_publication = commentaires.id_publication 
-      WHERE publications.titre LIKE :recherche OR publications.message LIKE :recherche OR publications.auteur LIKE :recherche OR publications.categorie LIKE :recherche OR commentaires.commentaire LIKE :recherche OR commentaires.auteur LIKE :recherche";
+      LEFT JOIN commentaires ON publications.id_publication = commentaires.id_publication 
+      LEFT JOIN categories ON categories.nom_categorie = publications.categorie
+      WHERE publications.titre LIKE :recherche OR publications.date_publication LIKE :recherche OR publications.message LIKE :recherche OR publications.auteur LIKE :recherche OR publications.categorie LIKE :recherche OR commentaires.commentaire LIKE :recherche OR commentaires.date_commentaire LIKE :recherche OR commentaires.auteur LIKE :recherche OR categories.description_categorie LIKE :recherche";
         $stmt = $this->pdo->getPdo()->prepare($query);
         $stmt->bindValue(':recherche', "%$recherche%");
         $stmt->execute();
