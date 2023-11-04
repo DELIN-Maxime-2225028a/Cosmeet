@@ -30,11 +30,12 @@
         </div>
     </div>
 
-    <button id="bouton_utile" class="modal-btn modal-trigger">Ajouter une publication</button>
     </div>
     <div id="categories"></div>
     <button id="Afficher_plus_categories" class="Afficher_plus">Afficher plus</button>
     <button id="Afficher_moins_categories" class="Afficher_moins" style="display: none;">Afficher moins</button>
+
+    <button id="bouton_utile" class="modal-btn modal-trigger">Ajouter une publication</button>
 
     <div id="publications"></div>
     <button id="Afficher_plus_publications" class="Afficher_plus">Afficher plus</button>
