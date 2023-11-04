@@ -29,7 +29,16 @@ class PublicationModels
         ];
         return $this->pdo->insert($S_table, $A_parametres);
     }
-
+    
+    public function getPseudo($email){
+        $query = "SELECT pseudonyme FROM utilisateurs WHERE email = :email";
+        $stmt = $this->pdo->getPdo()->prepare($query);
+        $stmt->bindValue(':email', $email);
+        $stmt->execute();
+        $pseudo = $stmt->fetchColumn();
+        return $pseudo;
+    }
+    
     // public function addCategorie($nom_categorie, $description_categorie)
     // {
     //     $query = "SELECT MAX(id_categorie) FROM categories";

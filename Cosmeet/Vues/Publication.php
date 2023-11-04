@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html style="font-size: 16px;" lang="fr">
 
@@ -9,7 +10,8 @@
     <div class="publication">
         <h2><?php echo $publication['titre']; ?></h2>
         <p><?php echo $publication['message']; ?></p>
-        <p>Publié le <?php echo $publication['date_publication']; ?> par <a class="text-style" href="index.php?url=Compte&email=<?php echo $publication['auteur']; ?>"><?php echo $publication['auteur']; ?></a></p>
+        <p>Publié le <?php echo $publication['date_publication']; ?> par <a class="text-style" href="index.php?url=Compte&email=<?php echo $publication['auteur']; ?>">
+        <?php $email=$publication['auteur'];?> <a href='../Cosmeet/index.php?url=Publication/getPseudo&email=<?php echo $email;?>'></a></p>
         
         <?php if ($_SESSION['utilisateur']['pseudo'] == $publication['auteur']) : ?>
             <button onclick="window.location.href='../Cosmeet/index.php?url=ModifierPost&id_publication=<?php echo $publication['id_publication']; ?>'">Modifier</button>
@@ -20,7 +22,8 @@
         <div class="commentaires" style="display: none;">
             <?php foreach ($commentaires as $commentaire) : ?>
                 <?php if ($commentaire['id_publication'] == $publication['id_publication']) : ?>
-                    <p><?php echo $commentaire['commentaire']; ?> | <a class="text-style" href="index.php?url=Compte/&pseudo=<?php echo $commentaire['auteur']; ?>"><?php echo $commentaire['auteur']; ?></a> | <?php echo $commentaire['date_commentaire']; ?>
+                    <p><?php echo $commentaire['commentaire']; ?> | <a class="text-style" href="index.php?url=Compte/&pseudo=<?php echo $commentaire['auteur']; ?>">
+                    <?php $email=$commentaire['auteur'];?> <a href='../Cosmeet/index.php?url=Publication/getPseudo&email=<?php echo $email;?>'></a>| <?php echo $commentaire['date_commentaire']; ?>
                     <?php if ($_SESSION['utilisateur']['pseudo'] == $commentaire['auteur']) : ?>
                         <button onclick="window.location.href='index.php?url=ModifierCom&id_commentaire=<?php echo $commentaire['id_commentaire']; ?>'">Modifier</button>
                     <?php endif; ?>
