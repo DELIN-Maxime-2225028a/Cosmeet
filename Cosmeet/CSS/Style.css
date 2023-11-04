@@ -65,3 +65,260 @@ a button {
 #part2 {
     margin-top: 20px;
 }
+
+/* Apply some basic styling to the body */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+}
+
+/* Style the main container */
+#page {
+    background-color: #fff;
+    margin: 20px auto;
+    max-width: 600px;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Style the form header */
+#formulaire h2 {
+    text-align: center;
+    color: #333;
+}
+
+/* Style form input fields and labels */
+form p {
+    margin: 10px 0;
+    color: #333;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="date"],
+select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Style the submit and reset buttons */
+input[type="submit"],
+input[type="reset"] {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Style the "retour" button */
+a button {
+    background-color: #ccc;
+    color: #333;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Add some spacing between form sections */
+#part2 {
+    margin-top: 20px;
+}
+
+#add-publication-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+#publications {
+    background-color: #fff;
+    margin: 20px auto;
+    width: 30%; 
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    
+}
+
+/* Style the publication header */
+.publication h2 {
+    text-align: center;
+    color: #333;
+}
+
+/* Style publication paragraphs */
+.publication p {
+    margin: 10px 0;
+    color: #333;
+}
+
+/* Add some spacing between publications */
+.publication {
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+}
+
+.categorie {
+  background-color: #fff;
+  padding: 10px ; 
+  margin: 10px auto; 
+  width: 20%;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  
+}
+
+.categorie h3 {
+  margin: 0; /* Supprime la marge autour du titre de la catégorie */
+  text-align: center;
+}
+
+.categorie p {
+  margin-top: 10px; 
+}
+
+#bouton_utile {
+  display: block;
+  margin: 0 auto 20px auto;
+}
+
+.Afficher_plus{
+  display: block;
+  margin: 0 auto 20px auto;
+}
+
+.Afficher_moins{
+  display: block;
+  margin: 0 auto 20px auto;
+}
+
+.text-style {
+  text-decoration: none; 
+  color: inherit;     
+  cursor: default;   
+  font-weight: bold;  
+}
+
+::before,
+::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Raleway, Helvetica, sans-serif;
+  background: #f1f1f1;
+}
+
+.modal-container {
+  /* display: none; */
+  visibility: hidden;
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  transition: visibility 0.4s;
+}
+.modal-container.active {
+  /* display: block; */
+  visibility: visible;
+}
+
+.overlay {
+  opacity: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #333333d3;
+  transition: opacity 0.4s 0.2s ease-out;
+}
+.modal-container.active .overlay {
+  opacity: 1;
+  transition: opacity 0.4s ease-out;
+}
+
+.modal {
+  opacity: 0;
+  width: 95%;
+  max-width: 500px;
+  min-width: 300px;
+  padding: 30px;
+  background: #fff;
+  border-radius: 5px;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, calc(-50% - 50px));
+  transition: opacity 0.4s ease-out,
+  transform 0.4s ease-out;
+}
+
+.modal-container.active .modal {
+  opacity: 1;
+  transform: translate(-50%, -50%);
+  transition: opacity 0.4s 0.2s ease-out,
+  transform 0.4s 0.2s ease-out;
+} 
+.close-modal {
+  padding: 8px 10px;
+  border: none;
+  border-radius: 5px;
+  font-size: 18px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  background: #ff365e;
+  color: #fff;
+}
+
+.modal h1 {
+  margin-bottom: 10px;
+  font-family: Montserrat, sans-serif;
+  font-weight: 500;
+}
+.modal p {
+  line-height: 1.4;
+  margin-bottom: 5px;
+}
+
+#sidebar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 250px;
+  height: 100%;
+  overflow: auto;
+  background-color: #f5f5f5;
+  padding: 20px;
+  box-sizing: border-box;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease-in-out;
+}
+
+#sidebar.active {
+  transform: translateX(0);
+}
+
+#sidebarButton {
+  position: fixed;
+  top: 1%;
+  left: 1%;
+  cursor: pointer;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
