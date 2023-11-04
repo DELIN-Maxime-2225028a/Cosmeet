@@ -19,4 +19,10 @@ class ControleurCommentaire {
             Vue::montrer("Commentaire");
         }
     }
+
+    public function getPseudo($email){
+        $model = new CommentaireModels();
+        $pseudo = $model->getPseudo($email);
+        return $pseudo;
+    }
 }

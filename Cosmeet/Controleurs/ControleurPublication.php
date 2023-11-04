@@ -17,4 +17,10 @@ class ControleurPublication {
             header('Location: index.php?url=Accueil');
         }
     }
+    
+    public function getPseudo($email){
+        $model = new PublicationModels();
+        $pseudo = $model->getPseudo($email);
+        return $pseudo;
+    }
 }
