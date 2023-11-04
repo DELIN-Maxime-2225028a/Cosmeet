@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 // Index initial pour suivre le nombre de publications déjà affichées
-let currentIndexPost = -3;
+let currentIndexPost = -5;
 let currentIndexCat = -5;
 
 function addToggleCommentsHandlers() {
