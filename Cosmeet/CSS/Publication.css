@@ -1,0 +1,47 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+}
+
+#publications {
+    background-color: #fff;
+    margin: 20px auto;
+    width: 30%; 
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    
+}
+
+.publication h2 {
+    text-align: center;
+    color: #333;
+}
+
+.publication p {
+    margin: 10px 0;
+    color: #333;
+}
+
+.publication {
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+}
+
+.text-lien {
+  text-decoration: none; 
+  color: inherit;     
+  cursor: default;   
+  font-weight: bold;  
+}
+
+::before,
+::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
