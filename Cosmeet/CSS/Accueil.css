@@ -102,11 +102,12 @@ a button {
 }
 
 .categorie {
-  border: 1px solid #000; 
+  background-color: #fff;
   padding: 10px; 
   margin: 10px auto; 
-  background-color: #f9f9f9; 
-  width: 60%; 
+  max-width: 600px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
 .categorie h3 {
