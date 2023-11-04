@@ -9,7 +9,7 @@
     <div class="publication">
         <h2><?php echo $publication['titre']; ?></h2>
         <p><?php echo $publication['message']; ?></p>
-        <p>Publié le <?php echo $publication['date_publication']; ?> par <a class="text-style" href="index.php?url=Compte&pseudo=<?php echo $publication['auteur']; ?>"><?php echo $publication['auteur']; ?></a></p>
+        <p>Publié le <?php echo $publication['date_publication']; ?> par <a class="text-style" href="index.php?url=Compte&email=<?php echo $publication['auteur']; ?>"><?php echo $publication['auteur']; ?></a></p>
         
         <?php if ($_SESSION['utilisateur']['pseudo'] == $publication['auteur']) : ?>
             <button onclick="window.location.href='../Cosmeet/index.php?url=ModifierPost&id_publication=<?php echo $publication['id_publication']; ?>'">Modifier</button>

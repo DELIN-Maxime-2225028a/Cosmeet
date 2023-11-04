@@ -8,30 +8,31 @@ class CompteModels
         $this->pdo = Connection::getInstance();     
     }
 
-    public function getEmail($pseudo){
-        $query = "SELECT email FROM utilisateurs WHERE pseudonyme = :pseudo";
+    public function getPseudo($email){
+        $query = "SELECT pseudonyme FROM utilisateurs WHERE email = :email";
         $stmt = $this->pdo->getPdo()->prepare($query);
-        $stmt->bindValue(':pseudo', $pseudo);
+        $stmt->bindValue(':email', $email);
         $stmt->execute();
-        $email = $stmt->fetchColumn();
-        return $email;
+        $pseudo = $stmt->fetchColumn();
+        return $pseudo;
     }
 
-    public function getDateInscription($pseudo){
-        $query = "SELECT date_inscription FROM utilisateurs WHERE pseudonyme = :pseudo";
+    public function getDateInscription($email){
+        $query = "SELECT date_inscription FROM utilisateurs WHERE email = :email";
         $stmt = $this->pdo->getPdo()->prepare($query);
-        $stmt->bindValue(':pseudo', $pseudo);
+        $stmt->bindValue(':email', $email);
         $stmt->execute();
         $date_inscription = $stmt->fetchColumn();
         return $date_inscription;
     }
 
-    public function getDateConnexion($pseudo){
-        $query = "SELECT date_derniere_connexion FROM utilisateurs WHERE pseudonyme = :pseudo";
+    public function getDateConnexion($email){
+        $query = "SELECT date_derniere_connexion FROM utilisateurs WHERE email = :email";
         $stmt = $this->pdo->getPdo()->prepare($query);
-        $stmt->bindValue(':pseudo', $pseudo);
+        $stmt->bindValue(':email', $email);
         $stmt->execute();
         $date_derniere_connexion = $stmt->fetchColumn();
         return $date_derniere_connexion;
     }
+
 }
