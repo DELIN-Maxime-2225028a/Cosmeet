@@ -13,6 +13,7 @@ if (isset($A_vue['reussite'])) {
 </head>
 
 <body>
+<div class="categorie">
     <div class="user-info">
         <p>Nom d'utilisateur : <?= $_SESSION['utilisateur']['pseudo'] ?></p>
         <p>Adresse email : <?= $_SESSION['utilisateur']['email'] ?></p>
@@ -33,15 +34,16 @@ if (isset($A_vue['reussite'])) {
         </div>
     </div>
     <button class="modal-btn modal-trigger">Modifier le Pseudonyme</button>
-    </div>
     <button id="actions" onclick="window.location.href='../Cosmeet/index.php?url=Utilisateur/deco'">Déconnexion</button>
     <h1 style="color: red;">
         <?php echo $condition ?>
     </h1>
-    <script src="./JavaScript/Modal.js"></script>
+    </div>
+</div>  
 </body>
 
 </html>
+<script src="./JavaScript/Modal.js"></script>
 <style>
     @import url("./CSS/Accueil.css");
     @import url("./CSS/Utilisateur.css");
