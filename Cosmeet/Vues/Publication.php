@@ -14,9 +14,9 @@
         <?php
         $email = $publication['auteur'];
         $controleur = new ControleurPublication();
-        $pseudo = $controleur->getPseudo($email);
+        $pseudoPost = $controleur->getPseudo($email);
         ?>
-        <p>Publié le <?php echo $publication['date_publication']; ?> par <a class="text-style" href="index.php?url=Compte&email=<?php echo $publication['auteur']; ?>"><?php echo $pseudo; ?></a></p>
+        <p>Publié le <?php echo $publication['date_publication']; ?> par <a class="text-style" href="index.php?url=Compte&email=<?php echo $publication['auteur']; ?>"><?php echo $pseudoPost; ?></a></p>
         </p>
 
         <?php if ($_SESSION['utilisateur']['pseudo'] == $publication['auteur']) : ?>
@@ -27,12 +27,16 @@
         <button class="toggle-comments-button">Commentaires</button>
         <div class="commentaires" style="display: none;">
             <?php foreach ($commentaires as $commentaire) : ?>
+                <?php
+                $email = $commentaire['auteur'];
+                $controleur = new ControleurPublication();
+                $pseudoCommentaire = $controleur->getPseudo($email);
+                ?>
                 <?php if ($commentaire['id_publication'] == $publication['id_publication']) : ?>
-                    <p><?php echo $commentaire['commentaire']; ?> | <a class="text-style" href="index.php?url=Compte/&pseudo=<?php echo $commentaire['auteur']; ?>">
-                            <?php $email = $commentaire['auteur']; ?> <a href='../Cosmeet/index.php?url=Publication/getPseudo&email=<?php echo $email; ?>'></a>| <?php echo $commentaire['date_commentaire']; ?>
-                            <?php if ($_SESSION['utilisateur']['pseudo'] == $commentaire['auteur']) : ?>
-                                <button onclick="window.location.href='index.php?url=ModifierCom&id_commentaire=<?php echo $commentaire['id_commentaire']; ?>'">Modifier</button>
-                            <?php endif; ?>
+                    <p><?php echo $commentaire['commentaire']; ?> | <a class="text-style" href="index.php?url=Compte&email=<?php echo $commentaire['auteur']; ?>"><?php echo $pseudoCommentaire; ?></a>| <?php echo $commentaire['date_commentaire']; ?>
+                        <?php if ($_SESSION['utilisateur']['pseudo'] == $commentaire['auteur']) : ?>
+                            <button onclick="window.location.href='index.php?url=ModifierCom&id_commentaire=<?php echo $commentaire['id_commentaire']; ?>'">Modifier</button>
+                        <?php endif; ?>
                     </p>
                 <?php endif; ?>
             <?php endforeach; ?>
