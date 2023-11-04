@@ -31,6 +31,18 @@ final class ControleurAccueil
         }
     }
 
+    public function lancerRechercheAction() {
+        $recherche = isset($_GET['recherche']) ? $_GET['recherche'] : '';
+        $model = new AccueilModels();
+        $publications = $model->getRecherche($recherche);
+        $commentaires = $model->getCommentaires();
+        
+        $_SESSION['afficherGabarit'] = false;
+        foreach ($publications as $publication) {
+            Vue::montrer('Publication', array('publication' => $publication,'commentaires' => $commentaires));
+        }
+    }
+
     public function accueil() {
         if (isset($_SESSION['utilisateur'])) {
             $model = new AccueilModels();

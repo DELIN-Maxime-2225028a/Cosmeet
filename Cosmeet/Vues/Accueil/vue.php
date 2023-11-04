@@ -6,7 +6,10 @@
 </head>
 
 <body>
-    <div class="modal-container">
+    <input type="text" id="search" placeholder="Recherche...">
+    <button id="searchButton">Rechercher</button>
+
+    <div id="tout" class="modal-container">
         <div class="overlay modal-trigger"></div>
         <div class="modal" role="dialog" aria-labelledby="modalTitle" aria-describedby="dialogDesc">
             <button aria-label="close modal" class="close-modal modal-trigger">X</button>
@@ -26,6 +29,7 @@
             </form>
         </div>
     </div>
+
     <button id="bouton_utile" class="modal-btn modal-trigger">Ajouter une publication</button>
     </div>
     <div id="categories"></div>
@@ -39,7 +43,6 @@
 
 </html>
 <script src="./JavaScript/Ajax.js"></script>
-<script src="./JavaScript/Modal.js"></script>
 <style>
     @import url("./CSS/Accueil.css");
 </style>

@@ -10,15 +10,21 @@ let currentIndexCat = -5;
 
 function addToggleCommentsHandlers() {
     document.querySelectorAll('.toggle-comments-button').forEach(function(button) {
-        button.addEventListener('click', function() {
-            var commentaires = this.nextElementSibling;
-            if (commentaires.style.display == 'none') {
-                commentaires.style.display = 'block';
-            } else {
-                commentaires.style.display = 'none';
-            }
-        });
+        // Supprimez d'abord tous les écouteurs d'événements précédents pour éviter les doublons
+        button.removeEventListener('click', toggleComments);
+        // Ajoutez ensuite le nouvel écouteur d'événements
+        button.addEventListener('click', toggleComments);
     });
+}
+
+// Déplacez la logique de basculement des commentaires dans une fonction séparée
+function toggleComments() {
+    var commentaires = this.nextElementSibling;
+    if (commentaires.style.display == 'none') {
+        commentaires.style.display = 'block';
+    } else {
+        commentaires.style.display = 'none';
+    }
 }
 
 
@@ -110,3 +116,24 @@ document.getElementById('Afficher_moins_categories').addEventListener('click', A
 document.getElementById('Afficher_moins_publications').addEventListener('click', AfficherMoinsPublications);
 
 
+document.getElementById('searchButton').addEventListener('click', function() {
+    var recherche = document.getElementById('search').value;
+
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', 'index.php?url=Accueil/lancerRecherche&recherche=' + recherche, true);
+    xhr.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            // Ici, nous vidons tout le contenu de la page.
+            document.body.innerHTML = '';
+
+            // Ensuite, nous créons une nouvelle div pour les publications et nous y insérons les nouvelles publications.
+            var publicationsDiv = document.createElement('div');
+            publicationsDiv.id = 'publications';
+            publicationsDiv.innerHTML = this.responseText;
+            document.body.appendChild(publicationsDiv);
+            
+            setTimeout(addToggleCommentsHandlers, 100);
+        }
+    };
+    xhr.send();
+});

@@ -7,7 +7,7 @@
 
 <body>
 <div class="categorie">
-    <h3><a href="index.php?url=TrierParCategorie&categorie=<?= urlencode($categorie['nom_categorie']) ?>"><?php echo $categorie['nom_categorie']; ?></a></h3>
+    <h3><?php echo $categorie['nom_categorie']; ?></h3>
     <p><?php echo $categorie['description_categorie']; ?></p>
 </div>
 </body>
