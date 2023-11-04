@@ -11,7 +11,7 @@ class ModifierComModels
 
     public function modifierCom($id_commentaire, $commentaire)
     {
-        $auteur = $_SESSION['utilisateur']['pseudo'];
+        $auteur = $_SESSION['utilisateur']['email'];
         $S_table = "commentaires";
         $data = [
             "commentaire" => $commentaire,
