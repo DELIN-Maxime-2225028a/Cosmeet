@@ -19,7 +19,7 @@
         <p>Publié le <?php echo $publication['date_publication']; ?> par <a class="text-style" href="index.php?url=Compte&email=<?php echo $publication['auteur']; ?>"><?php echo $pseudoPost; ?></a></p>
         </p>
 
-        <?php if ($_SESSION['utilisateur']['pseudo'] == $publication['auteur']) : ?>
+        <?php if ($_SESSION['utilisateur']['email'] == $publication['auteur']) : ?>
             <button onclick="window.location.href='../Cosmeet/index.php?url=ModifierPost&id_publication=<?php echo $publication['id_publication']; ?>'">Modifier</button>
         <?php endif; ?>
 
@@ -34,7 +34,7 @@
                 ?>
                 <?php if ($commentaire['id_publication'] == $publication['id_publication']) : ?>
                     <p><?php echo $commentaire['commentaire']; ?> | <a class="text-style" href="index.php?url=Compte&email=<?php echo $commentaire['auteur']; ?>"><?php echo $pseudoCommentaire; ?></a>| <?php echo $commentaire['date_commentaire']; ?>
-                        <?php if ($_SESSION['utilisateur']['pseudo'] == $commentaire['auteur']) : ?>
+                        <?php if ($_SESSION['utilisateur']['email'] == $commentaire['auteur']) : ?>
                             <button onclick="window.location.href='index.php?url=ModifierCom&id_commentaire=<?php echo $commentaire['id_commentaire']; ?>'">Modifier</button>
                         <?php endif; ?>
                     </p>
