@@ -19,4 +19,13 @@ class ControleurModifierCom {
             Vue::montrer("ModifierCom",array('commentaire' => $commentaire));
         }
     }
+
+    public function suprimerComAction($id_commentaire){
+        $O_suprimerCom = new ModifierComModels();
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $id_commentaire = $_POST['id_commentaire'];
+            $O_suprimerCom->SuprimerCom($id_commentaire);
+            header('Location: index.php?url=Accueil');
+    }
+}
 }

@@ -24,6 +24,12 @@ class ModifierComModels
         return $this->pdo->update($S_table, $data, $where);
     }
 
+    public function SuprimerCom($id_commentaire){
+        $S_table = "commentaires";
+        $where = "id_commentaire = $id_commentaire";
+        return $this->pdo->delete($S_table,$where);
+    }
+
     public function getCommentaireById($id_commentaire)
     {
         $sql = "SELECT * FROM commentaires WHERE id_commentaire = :id_commentaire";

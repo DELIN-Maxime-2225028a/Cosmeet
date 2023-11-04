@@ -22,4 +22,13 @@ class ControleurModifierPost {
             Vue::montrer("ModifierPost",array('publication' => $publication, 'categories' => $categories));
         }
     }
+
+    public function suprimerPostAction($id_publication){
+        $O_suprimerPost = new ModifierPostModels();
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $id_publication = $_POST['id_publication'];
+            $O_suprimerPost->SuprimerPost($id_publication);
+            header('Location: index.php?url=Accueil');
+    }
+}
 }

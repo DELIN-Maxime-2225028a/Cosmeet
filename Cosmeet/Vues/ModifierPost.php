@@ -29,11 +29,15 @@ if (isset($A_vue['reussite'])) {
                 <?php endforeach; ?>
             </select>
             <input type="hidden" name="id_publication" value="<?= $publication['id_publication'] ?>">
-            <button type="submit">Publier</button>
-            <h1 style="color: red;">
-                <?php echo $condition ?>
-            </h1>
+            <button type="submit">Modifier</button>
         </form>
+        <form method="POST" action="../Cosmeet/index.php?url=ModifierPost/suprimerPost" enctype="multipart/form-data">
+            <input type="hidden" name="id_publication" value="<?= $publication['id_publication'] ?>">
+            <button type="submit">Supprimer</button>
+        </form>
+        <h1 style="color: red;">
+            <?php echo $condition ?>
+        </h1>
     </div>
 </body>
 

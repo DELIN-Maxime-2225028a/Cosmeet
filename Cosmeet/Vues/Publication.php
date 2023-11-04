@@ -20,7 +20,7 @@
         </p>
 
         <?php if ($_SESSION['utilisateur']['email'] == $publication['auteur']) : ?>
-            <button onclick="window.location.href='../Cosmeet/index.php?url=ModifierPost&id_publication=<?php echo $publication['id_publication']; ?>'">Modifier</button>
+            <button onclick="window.location.href='../Cosmeet/index.php?url=ModifierPost&id_publication=<?php echo $publication['id_publication']; ?>'">Modifier/Suprimer</button>
         <?php endif; ?>
 
         <button id="add-comment-button" onclick="window.location.href='../Cosmeet/index.php?url=Commentaire&id_publication=<?php echo $publication['id_publication']; ?>'">Ajouter un commentaire</button>

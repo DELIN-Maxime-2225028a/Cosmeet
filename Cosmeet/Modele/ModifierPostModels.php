@@ -25,6 +25,12 @@ class ModifierPostModels
 
         return $this->pdo->update($S_table, $data, $where);
     }
+    
+    public function SuprimerPost($id_publication){
+        $S_table = "publications";
+        $where = "id_publication = $id_publication";
+        return $this->pdo->delete($S_table,$where);
+    }
 
     public function getPublicationById($id_publication)
     {

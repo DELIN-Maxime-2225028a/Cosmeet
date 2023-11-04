@@ -22,11 +22,15 @@ if (isset($A_vue['reussite'])) {
             <h1>Modifier Commentaire</h1>
             <textarea name="commentaire" placeholder="COMMENTAIRE" required><?php echo $commentaire['commentaire']; ?></textarea>
             <input type="hidden" name="id_commentaire" value="<?= $commentaire['id_commentaire'] ?>">
-            <button type="submit">Publier</button>
-            <h1 style="color: red;">
-                <?php echo $condition ?>
-            </h1>
+            <button type="submit">Modifier</button>
         </form>
+        <form method="POST" action="../Cosmeet/index.php?url=ModifierCom/suprimerCom" enctype="multipart/form-data">
+            <input type="hidden" name="id_commentaire" value="<?= $commentaire['id_commentaire'] ?>">
+            <button type="submit">Supprimer</button>
+        </form>
+        <h1 style="color: red;">
+            <?php echo $condition ?>
+        </h1>
     </div>
 </body>
 
