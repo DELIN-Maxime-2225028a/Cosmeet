@@ -46,7 +46,7 @@
                     <a class="text-lien" href="index.php?url=Compte&email=<?php echo $commentaire['auteur']; ?>"><?php echo $pseudoCommentaire; ?></a> |
                     <?php echo $commentaire['date_commentaire']; ?>
                         <?php if ($_SESSION['utilisateur']['email'] == $commentaire['auteur']) : ?>
-                            <button onclick="window.location.href='index.php?url=ModifierCom&id_commentaire=<?php echo $commentaire['id_commentaire']; ?>'">Modifier</button>
+                            <button onclick="window.location.href='index.php?url=ModifierCom&id_commentaire=<?php echo $commentaire['id_commentaire']; ?>'">Modifier/Suprimer</button>
                         <?php endif; ?>
                     </p>
                 <?php endif; ?>
