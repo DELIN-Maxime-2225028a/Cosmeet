@@ -6,10 +6,10 @@
 </head>
 
 <body>
-<div class="categorie">
-    <h3><?php echo $categorie['nom_categorie']; ?></h3>
-    <p><?php echo $categorie['description_categorie']; ?></p>
-</div>
+    <div class="categorie">
+        <h3><?php echo $categorie['nom_categorie']; ?></h3>
+        <p><?php echo $categorie['description_categorie']; ?></p>
+    </div>
 </body>
 
 </html>

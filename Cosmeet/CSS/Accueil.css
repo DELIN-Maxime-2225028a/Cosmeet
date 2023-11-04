@@ -75,10 +75,11 @@ a button {
 #publications {
     background-color: #fff;
     margin: 20px auto;
-    max-width: 600px;
+    width: 30%; 
     padding: 20px;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    
 }
 
 /* Style the publication header */
@@ -105,9 +106,10 @@ a button {
   background-color: #fff;
   padding: 10px ; 
   margin: 10px auto; 
-  max-width: 600px;
+  width: 20%;
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  
 }
 
 .categorie h3 {
@@ -141,8 +143,6 @@ a button {
   font-weight: bold;  
 }
 
-
-
 ::before,
 ::after {
   box-sizing: border-box;
@@ -154,9 +154,6 @@ body {
   font-family: Raleway, Helvetica, sans-serif;
   background: #f1f1f1;
 }
-
-
-
 
 .modal-container {
   /* display: none; */
