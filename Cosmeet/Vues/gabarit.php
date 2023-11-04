@@ -7,7 +7,7 @@
 </head>
 
 <body>
-    <button id="sidebarButton">sidebar</button>
+    <button id="sidebarButton">Menu</button>
     <?php Vue::montrer('standard/haut'); ?>
     <?php echo $A_vue['body'] ?>
     <?php Vue::montrer('standard/pied'); ?>

@@ -17,7 +17,7 @@ class PublicationModels
         $lastId = $stmt->fetchColumn();
         $newId = $lastId + 1;
 
-        $auteur = $_SESSION['utilisateur']['pseudo'];
+        $auteur = $_SESSION['utilisateur']['email'];
         $S_table = "publications";
         $A_parametres = [
             "id_publication" => $newId,
