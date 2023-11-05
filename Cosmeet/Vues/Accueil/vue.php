@@ -6,9 +6,6 @@
 </head>
 
 <body>
-    <input type="text" id="search" placeholder="Recherche...">
-    <button id="searchButton">Rechercher</button>
-
     <div id="tout" class="modal-container">
         <div class="overlay modal-trigger"></div>
         <div class="modal" role="dialog" aria-labelledby="modalTitle" aria-describedby="dialogDesc">

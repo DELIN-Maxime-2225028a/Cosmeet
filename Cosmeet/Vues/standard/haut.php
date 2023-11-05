@@ -9,6 +9,8 @@
             <a id="acceuil" href="./index.php?url=Accueil">ACCUEIL</a></br>
             <a id="utilisateur" href="./index.php?url=Utilisateur">COMPTE</a>
         </h3>
+        <input type="text" id="search" placeholder="Recherche...">
+        <button id="searchButton">Rechercher</button>
 
     </div>
 </body>
