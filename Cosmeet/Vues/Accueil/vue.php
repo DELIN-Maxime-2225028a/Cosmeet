@@ -47,7 +47,7 @@
 </html>
 
 <script src="./JavaScript/Ajax.js"></script>
-
+<script src="./JavaScript/Modal.js"></script>
 <style>
     @import url("./CSS/Modals.css");
     @import url("./CSS/Accueil.css");
