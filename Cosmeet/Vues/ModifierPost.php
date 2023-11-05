@@ -23,8 +23,8 @@ if (isset($A_vue['reussite'])) {
                     <h3><a id="Retour" href="../Cosmeet/index.php?url=Accueil">RETOUR</a></h3>
                 </div>
                 <h1>Modfier Publication</h1>
-                <input type="text" name="titre" placeholder="TITRE" required value="<?php echo $publication['titre']; ?>">
-                <textarea name="message" placeholder="MESSAGE" required><?php echo $publication['message']; ?></textarea>
+                <input type="text" name="titre" placeholder="TITRE" required value="<?php echo $publication['titre']; ?>"></br>
+                <textarea name="message" placeholder="MESSAGE" required><?php echo $publication['message']; ?></textarea></br>
 
                 <select id="categorie" name="categorie">
                     <option value="" <?php if ($publication['categorie'] == NULL) echo 'selected'; ?>>Aucune</option>

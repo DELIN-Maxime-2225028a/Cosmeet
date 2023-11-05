@@ -23,8 +23,8 @@ if (isset($A_vue['reussite'])) {
                     <h3><a id="Retour" href="../Cosmeet/index.php?url=Accueil">RETOUR</a></h3>
                 </div>
                 <h1>Modifier Commentaire</h1>
-                <textarea name="commentaire" placeholder="COMMENTAIRE" required><?php echo $commentaire['commentaire']; ?></textarea>
-                <input type="hidden" name="id_commentaire" value="<?= $commentaire['id_commentaire'] ?>">
+                <textarea name="commentaire" placeholder="COMMENTAIRE" required><?php echo $commentaire['commentaire']; ?></textarea></br>
+                <input type="hidden" name="id_commentaire" value="<?= $commentaire['id_commentaire'] ?>"></br>
                 <button type="submit">Modifier</button>
             </form>
 
