@@ -19,3 +19,41 @@ body {
   display: block;
   margin: 0 auto 20px auto;
 }
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+  margin: 0;
+  padding: 0;
+}
+
+#bouton_utile {
+  display: block;
+  margin: 0 auto 20px auto;
+  background-color: #3498db;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+
+#bouton_utile:hover {
+  background-color: #45a6e8;
+}
+
+.Afficher_plus, .Afficher_moins {
+  display: block;
+  margin: 0 auto 20px auto;
+  background-color: #27ae60;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+
+.Afficher_plus:hover, .Afficher_moins:hover {
+  background-color: #32c76f;
+}
