@@ -53,5 +53,6 @@
 <script src="./JavaScript/Ajax.js"></script>
 
 <style>
+    @import url("./CSS/Modals.css");
     @import url("./CSS/Accueil.css");
 </style>
