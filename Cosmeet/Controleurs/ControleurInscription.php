@@ -26,8 +26,8 @@ class ControleurInscription {
                         'email'=> $email,
                         'mdp1' => $mdp1,
                         "date_inscription" => date('y-m-d H:i:s'),
-                        "date_derniere_connexion" => date('y-m-d H:i:s')
-
+                        "date_derniere_connexion" => date('y-m-d H:i:s'),
+                        "user_type" => "utilisateur"
                     );
                     $O_inscription -> inscription($pseudo,$email,$mdp1);
                     header('Location: ./index.php?url=Accueil');

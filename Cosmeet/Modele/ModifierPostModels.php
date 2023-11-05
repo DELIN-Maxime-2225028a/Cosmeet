@@ -11,7 +11,11 @@ class ModifierPostModels
 
     public function modifierPost($id_publication, $titre, $message, $nom_categorie = NULL)
     {
-        $auteur = $_SESSION['utilisateur']['email'];
+        if ($_SESSION['utilisateur']['user_type'] == "admin") {
+            $auteur = $this->getPublicationById($id_publication)["auteur"];
+        } else {
+            $auteur = $_SESSION['utilisateur']['pseudo'];
+        }
         $S_table = "publications";
         $data = [
             "titre" => $titre,
@@ -45,5 +49,14 @@ class ModifierPostModels
         $stmt = $this->pdo->getPdo()->prepare($sql);
         $stmt->execute();
         return $stmt->fetchAll();
+    }
+
+    public function getCommentaireIds($id_publication){
+        $query = "SELECT id_commentaire FROM commentaires WHERE id_publication = :id_publication";
+        $stmt = $this->pdo->getPdo()->prepare($query);
+        $stmt->bindValue(':id_publication', $id_publication);
+        $stmt->execute();
+        $commentaireIds = $stmt->fetchAll(PDO::FETCH_COLUMN);
+        return $commentaireIds;
     }
 }

@@ -25,7 +25,10 @@
         </p>
 
         <?php if ($_SESSION['utilisateur']['email'] == $publication['auteur']) : ?>
-            <button onclick="window.location.href='./index.php?url=ModifierPost&id_publication=<?php echo $publication['id_publication']; ?>'">Modifier/Suprimer</button>
+            <button onclick="window.location.href='./index.php?url=ModifierPost&id_publication=<?php echo $publication['id_publication']; ?>'">Modifier/Supprimer</button>
+        <?php endif; ?>
+        <?php if ($_SESSION['utilisateur']['user_type'] == "admin") : ?>
+            <button onclick="window.location.href='./index.php?url=ModifierPost&id_publication=<?php echo $publication['id_publication']; ?>'">Modifier/Supprimer</button>
         <?php endif; ?>
 
         <button id="add-comment-button" onclick="window.location.href='./index.php?url=Commentaire&id_publication=<?php echo $publication['id_publication']; ?>'">Ajouter un commentaire</button>
@@ -43,8 +46,8 @@
 
                 <?php if ($commentaire['id_publication'] == $publication['id_publication']) : ?>
                     <p><?php echo $commentaire['commentaire']; ?> |
-                    <a class="text-lien" href="index.php?url=Compte&email=<?php echo $commentaire['auteur']; ?>"><?php echo $pseudoCommentaire; ?></a> |
-                    <?php echo $commentaire['date_commentaire']; ?>
+                        <a class="text-lien" href="index.php?url=Compte&email=<?php echo $commentaire['auteur']; ?>"><?php echo $pseudoCommentaire; ?></a> |
+                        <?php echo $commentaire['date_commentaire']; ?>
                         <?php if ($_SESSION['utilisateur']['email'] == $commentaire['auteur']) : ?>
                             <button onclick="window.location.href='index.php?url=ModifierCom&id_commentaire=<?php echo $commentaire['id_commentaire']; ?>'">Modifier/Suprimer</button>
                         <?php endif; ?>

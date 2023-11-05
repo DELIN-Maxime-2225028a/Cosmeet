@@ -24,11 +24,16 @@ class ControleurModifierPost {
     }
 
     public function suprimerPostAction($id_publication){
-        $O_suprimerPost = new ModifierPostModels();
+        $O_supprimerPost = new ModifierPostModels();
+        $O_supprimerCom = new ModifierComModels();
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $id_publication = $_POST['id_publication'];
-            $O_suprimerPost->SuprimerPost($id_publication);
+            $commentaireIds = $O_supprimerPost->getCommentaireIds($id_publication);
+            foreach($commentaireIds as $id_commentaire) {
+                $O_supprimerCom->SuprimerCom($id_commentaire);
+            }
+            $O_supprimerPost->SuprimerPost($id_publication);
             header('Location: index.php?url=Accueil');
+        }
     }
-}
 }
