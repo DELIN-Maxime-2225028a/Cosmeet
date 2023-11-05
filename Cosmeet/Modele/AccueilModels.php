@@ -8,6 +8,8 @@ class AccueilModels
     {
         $this->pdo = Connection::getInstance();
     }
+
+    // Fonction pour récupérer toutes les publications de la base de données.
     function getPublications()
     {
         $query = "SELECT * FROM publications ORDER BY id_publication DESC";
@@ -16,7 +18,8 @@ class AccueilModels
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 
-    function getPublications2($start = 0, $nombre = 3)
+    // Fonction pour récupérer un nombre limité de publications .
+    function getPublicationsStart($start = 0, $nombre = 5)
     {
         $query = "SELECT * FROM publications ORDER BY id_publication DESC LIMIT :start, :nombre";
         $stmt = $this->pdo->getPdo()->prepare($query);
@@ -26,6 +29,7 @@ class AccueilModels
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 
+    // Fonction pour récupérer tous des commentaires de la base de données.
     function getCommentaires()
     {
         $query = "SELECT * FROM commentaires ORDER BY id_publication ASC";
@@ -34,6 +38,7 @@ class AccueilModels
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 
+    // Fonction pour récupérer des catégories existantes.
     public function getCategories()
     {
         $query = "SELECT nom_categorie FROM categories";
@@ -42,7 +47,8 @@ class AccueilModels
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 
-    function getCategories2($start = 0, $nombre = 5)
+    // Fonction similaire à getCategories mais limite les résultats.
+    function getCategoriesStart($start = 0, $nombre = 5)
     {
         $query = "SELECT * FROM categories ORDER BY id_categorie DESC LIMIT :start, :nombre";
         $stmt = $this->pdo->getPdo()->prepare($query);
@@ -52,6 +58,7 @@ class AccueilModels
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 
+    // Fonction pour mettre à jour la date de dernière connexion d'un utilisateur.
     public function modifierDerniereConnection()
     {
         $S_table = "utilisateurs";
@@ -67,9 +74,10 @@ class AccueilModels
         return $this->pdo->update($S_table, $data, $where);
     }
 
+    // Fonction pour obtenir les résultats de recherche dans les publications et les commentaires en fonction d'une recherche.
     public function getRecherche($recherche)
-{
-    $query = "SELECT DISTINCT publications.* FROM publications 
+    {
+        $query = "SELECT DISTINCT publications.* FROM publications 
     LEFT JOIN commentaires ON publications.id_publication = commentaires.id_publication
     LEFT JOIN categories ON publications.categorie = categories.nom_categorie
     WHERE publications.titre LIKE :recherche OR publications.date_publication LIKE :recherche 
@@ -78,9 +86,9 @@ class AccueilModels
     OR commentaires.auteur LIKE :recherche OR commentaires.date_commentaire LIKE :recherche
     OR categories.nom_categorie LIKE :recherche OR categories.description_categorie LIKE :recherche
     ORDER BY id_publication DESC";
-    $stmt = $this->pdo->getPdo()->prepare($query);
-    $stmt->bindValue(':recherche', "%$recherche%");
-    $stmt->execute();
-    return $stmt->fetchAll(PDO::FETCH_ASSOC);
-}
+        $stmt = $this->pdo->getPdo()->prepare($query);
+        $stmt->bindValue(':recherche', "%$recherche%");
+        $stmt->execute();
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
 }
