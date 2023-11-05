@@ -4,11 +4,14 @@ require_once 'Noyau/Connection.php';
 class CompteModels
 {
     private $pdo;
-    public function __construct()     {
-        $this->pdo = Connection::getInstance();     
+    public function __construct()
+    {
+        $this->pdo = Connection::getInstance();
     }
 
-    public function getPseudo($email){
+    // Fonction pour obtenir le pseudonyme d'un utilisateur.
+    public function getPseudo($email)
+    {
         $query = "SELECT pseudonyme FROM utilisateurs WHERE email = :email";
         $stmt = $this->pdo->getPdo()->prepare($query);
         $stmt->bindValue(':email', $email);
@@ -17,7 +20,9 @@ class CompteModels
         return $pseudo;
     }
 
-    public function getPostIds($email){
+    // Fonction pour obtenir les id_publication faites par un utilisateur.
+    public function getPostIds($email)
+    {
         $query = "SELECT id_publication FROM publications WHERE auteur = :email";
         $stmt = $this->pdo->getPdo()->prepare($query);
         $stmt->bindValue(':email', $email);
@@ -26,8 +31,9 @@ class CompteModels
         return $postIds;
     }
 
-
-    public function getDateInscription($email){
+    // Fonction pour obtenir la date d'inscription d'un utilisateur.
+    public function getDateInscription($email)
+    {
         $query = "SELECT date_inscription FROM utilisateurs WHERE email = :email";
         $stmt = $this->pdo->getPdo()->prepare($query);
         $stmt->bindValue(':email', $email);
@@ -36,7 +42,9 @@ class CompteModels
         return $date_inscription;
     }
 
-    public function getDateConnexion($email){
+    // Fonction pour obtenir la date de la dernière connexion d'un utilisateur.
+    public function getDateConnexion($email)
+    {
         $query = "SELECT date_derniere_connexion FROM utilisateurs WHERE email = :email";
         $stmt = $this->pdo->getPdo()->prepare($query);
         $stmt->bindValue(':email', $email);
@@ -45,22 +53,27 @@ class CompteModels
         return $date_derniere_connexion;
     }
 
-    public function supprimerCompte($pseudo){
+    // Fonction pour supprimer un compte utilisateur.
+    public function supprimerCompte($pseudo)
+    {
         $S_table = "utilisateurs";
         $where = "pseudonyme = '$pseudo'";
-        return $this->pdo->delete($S_table,$where);
+        return $this->pdo->delete($S_table, $where);
     }
 
-    public function supprimerPosts($email){
+    // Fonction pour supprimer les publications d'un utilisateur.
+    public function supprimerPosts($email)
+    {
         $S_table = "publications";
         $where = "auteur = '$email'";
-        return $this->pdo->delete($S_table,$where);
+        return $this->pdo->delete($S_table, $where);
     }
 
-    public function supprimerCommentaires($id_publication){
+    // Fonction pour supprimer les commentaires.
+    public function supprimerCommentaires($id_publication)
+    {
         $S_table = "commentaires";
         $where = "auteur = '$id_publication'";
-        return $this->pdo->delete($S_table,$where);
+        return $this->pdo->delete($S_table, $where);
     }
-
 }
