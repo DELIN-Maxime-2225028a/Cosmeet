@@ -13,8 +13,10 @@
     <div id="tout" class="modal-container">
         <div class="overlay modal-trigger"></div>
         <div class="modal" role="dialog" aria-labelledby="modalTitle" aria-describedby="dialogDesc">
+
             <button aria-label="close modal" class="close-modal modal-trigger">X</button>
             <h1 id="modalTitle">Publication</h1>
+
             <form method="POST" action="../Cosmeet/index.php?url=Publication/addPublication" enctype="multipart/form-data">
                 <input type="text" name="titre" placeholder="TITRE" required>
                 <textarea name="message" placeholder="MESSAGE" required></textarea>
@@ -28,10 +30,12 @@
 
                 <button class="boutonLog" name="boutonLog" type="submit">Publier</button>
             </form>
+
         </div>
     </div>
 
     </div>
+
     <div id="categories"></div>
     <button id="Afficher_plus_categories" class="Afficher_plus">Afficher plus</button>
     <button id="Afficher_moins_categories" class="Afficher_moins" style="display: none;">Afficher moins</button>
@@ -41,10 +45,13 @@
     <div id="publications"></div>
     <button id="Afficher_plus_publications" class="Afficher_plus">Afficher plus</button>
     <button id="Afficher_moins_publications" class="Afficher_moins" style="display: none;">Afficher moins</button>
+
 </body>
 
 </html>
+
 <script src="./JavaScript/Ajax.js"></script>
+
 <style>
     @import url("./CSS/Accueil.css");
 </style>

@@ -1,0 +1,11 @@
+#scroll_to_top {
+    position: fixed;
+    width: auto;
+    height: auto;
+    bottom: 5%;
+    right: 0;
+}
+
+  #scroll_to_top img {
+    width: 25px;
+} 
