@@ -1,0 +1,24 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+}
+
+.categorie {
+  background-color: #fff;
+  padding: 10px ; 
+  margin: 10px auto; 
+  width: 20%;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.categorie h3 {
+  margin: 0; /* Supprime la marge autour du titre de la catégorie */
+  text-align: center;
+}
+
+.categorie p {
+  margin-top: 10px; 
+}
