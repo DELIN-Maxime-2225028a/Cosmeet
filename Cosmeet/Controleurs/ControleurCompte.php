@@ -6,7 +6,7 @@ require_once 'Modele/CompteModels.php';
 
 class ControleurCompte
 {
-
+    // Fonction par défaut du contrôleur pour afficher le compte.
     public function defautAction()
     {
         if (isset($_GET['email'])) {
@@ -22,7 +22,8 @@ class ControleurCompte
             Vue::montrer("Utilisateur");
         }
     }
-
+    
+    // Fonction pour supprimer un compte.
     public function supprimerCompteAction($pseudo, $email)
     {
         $model = new CompteModels();
