@@ -1,5 +1,6 @@
 <!doctype html>
 <html style="font-size: 16px;" lang="fr">
+<!-- Lien vers l'icône du site -->
 <link rel="icon" href="./Images/favicon.ico" type="image/x-icon">
 
 <head>

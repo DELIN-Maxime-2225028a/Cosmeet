@@ -18,6 +18,7 @@ if (isset($A_vue['reussite'])) {
     <div class="Commentaire">
         <div id="formulaire">
 
+            <!-- Formulaire pour ajouter un commentaire -->
             <form method="POST" action="./index.php?url=Commentaire/addCommentaire" enctype="multipart/form-data">
 
                 <div id="Onglets">
@@ -26,6 +27,7 @@ if (isset($A_vue['reussite'])) {
 
                 <textarea name="commentaire" placeholder="COMMENTAIRE" required></textarea>
                 <button class="boutonLog" name="boutonLog" type="submit">Publier</button>
+                <!-- Champ caché pour envoyer l'ID de la publication -->
                 <input type="hidden" name="id_publication" value="<?php echo $_GET['id_publication']; ?>">
 
                 <h1 style="color: red;">

@@ -14,8 +14,11 @@
             <p>Date inscription : <?php echo $A_vue['DateInscription'] ?></p>
             <p>Dernier connection : <?php echo $A_vue['DateConnexion'] ?></p>
 
+            <!-- Si l'utilisateur est un administrateur, afficher le formulaire pour supprimer le compte -->
             <?php if ($_SESSION['utilisateur']['user_type'] == "admin") : ?>
+
                 <form method="POST" action="./index.php?url=Compte/supprimerCompte" enctype="multipart/form-data">
+                    <!-- Champ caché pour récupérer le pseudo et l'email de l'utilisateur -->
                     <input type="hidden" name="pseudo" value="<?= $A_vue['pseudo'] ?>">
                     <input type="hidden" name="email" value="<?= $A_vue['email'] ?>">
                     <button type="submit">Supprimer</button>

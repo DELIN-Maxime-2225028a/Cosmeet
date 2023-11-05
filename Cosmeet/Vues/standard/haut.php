@@ -16,7 +16,7 @@
         <h5>
             <a id="acceuil" href="./index.php?url=MotDePasseOublie">MOT DE PASSE OUBLIÉ</a></br>
         </h5>
-        
+
         <input type="text" id="search" placeholder="Recherche...">
         <button id="searchButton">Rechercher</button>
 

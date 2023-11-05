@@ -18,6 +18,7 @@ if (isset($A_vue['reussite'])) {
     <div class="Connexion">
         <div id="formulaire">
 
+            <!-- Formulaire de connexion -->
             <form method="POST" action="./index.php?url=Connexion/verifierUtilisateur" enctype="multipart/form-data">
 
                 <div id="Onglets">
@@ -30,6 +31,7 @@ if (isset($A_vue['reussite'])) {
 
                 <a href="./index.php?url=MotDePasseOublie" class="password-forgot">Mot de passe oublié ?</a>
 
+                <!-- Affichage de la condition (réussite ou erreur) -->
                 <h1 style="color: red;">
                     <?php echo $condition ?>
                 </h1>
