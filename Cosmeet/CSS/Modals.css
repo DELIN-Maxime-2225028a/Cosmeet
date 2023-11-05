@@ -6,6 +6,7 @@
   width: 100vw;
   height: 100vh;
   transition: visibility 0.4s;
+  text-align: center;
 }
 
 .modal-container.active {
