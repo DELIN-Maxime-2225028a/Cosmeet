@@ -23,7 +23,7 @@ if (isset($A_vue['reussite'])) {
                     <h3><a id="Retour" href="./index.php?url=Accueil">RETOUR</a></h3>
                 </div>
                 
-                <h1>Modfier Publication</h1>
+                <h1>Modifier Publication</h1>
                 <input type="text" name="titre" placeholder="TITRE" required value="<?php echo $publication['titre']; ?>"></br>
                 <textarea name="message" placeholder="MESSAGE" required><?php echo $publication['message']; ?></textarea></br>
 
