@@ -10,7 +10,7 @@ class MotDePasseOublieModels
         $this->pdo = Connection::getInstance();
     }
 
-     // Fonction pour récupérer un pseudo.
+    // Fonction pour récupérer un pseudo.
     public function getPseudo($email)
     {
         $query = "SELECT pseudonyme FROM utilisateurs WHERE email = :email";
@@ -21,7 +21,7 @@ class MotDePasseOublieModels
         return $pseudo;
     }
 
-     // Fonction pour récupérer un email.
+    // Fonction pour récupérer un email.
     public function getEmail($pseudo)
     {
         $query = "SELECT email FROM utilisateurs WHERE pseudonyme = :pseudo";
