@@ -15,7 +15,7 @@ final class ControleurAccueil
         
         $_SESSION['afficherGabarit'] = false;
         foreach ($publications as $publication) {
-            Vue::montrer('Publication', array('publication' => $publication,'commentaires' => $commentaires));
+                    Vue::montrer('Publication', array('publication' => $publication,'commentaires'=> $commentaires));
         }
     }
 
@@ -39,7 +39,7 @@ final class ControleurAccueil
         
         $_SESSION['afficherGabarit'] = false;
         foreach ($publications as $publication) {
-            Vue::montrer('Publication', array('publication' => $publication,'commentaires' => $commentaires));
+                    Vue::montrer('Publication', array('publication' => $publication,'commentaires'=> $commentaires));
         }
     }
 

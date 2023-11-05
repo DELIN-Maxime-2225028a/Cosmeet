@@ -123,14 +123,12 @@ document.getElementById('searchButton').addEventListener('click', function() {
     xhr.open('GET', 'index.php?url=Accueil/lancerRecherche&recherche=' + recherche, true);
     xhr.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
-            // Ici, nous vidons tout le contenu de la page.
-            document.body.innerHTML = '';
+            // Ici, nous vidons le contenu de la div 'publications'.
+            var publicationsDiv = document.getElementById('publications');
+            publicationsDiv.innerHTML = '';
 
-            // Ensuite, nous créons une nouvelle div pour les publications et nous y insérons les nouvelles publications.
-            var publicationsDiv = document.createElement('div');
-            publicationsDiv.id = 'publications';
+            // Ensuite, nous y insérons les nouvelles publications.
             publicationsDiv.innerHTML = this.responseText;
-            document.body.appendChild(publicationsDiv);
 
             setTimeout(addToggleCommentsHandlers, 100);
         }
