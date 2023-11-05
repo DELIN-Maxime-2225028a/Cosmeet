@@ -1,5 +1,6 @@
 <!doctype html>
 <html style="font-size: 16px;" lang="fr">
+<link rel="icon" href="./Images/favicon.ico" type="image/x-icon">
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />

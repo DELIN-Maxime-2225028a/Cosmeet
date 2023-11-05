@@ -3,7 +3,6 @@
 
 <head>
     <title>Cosmeet</title>
-    <link rel="icon" href="./Images/favicon.ico" type="image/x-icon">
 </head>
 
 <body>
