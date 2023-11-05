@@ -55,7 +55,7 @@ if (isset($A_vue['reussite'])) {
 <script src="./JavaScript/Modal.js"></script>
 
 <style>
-    @import url("./CSS/MenuCoulissant.css");
     @import url("./CSS/Modals.css");
     @import url("./CSS/Utilisateur.css");
+    @import url("./CSS/MenuCoulissant.css");
 </style>

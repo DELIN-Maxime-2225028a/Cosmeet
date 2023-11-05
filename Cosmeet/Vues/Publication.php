@@ -60,6 +60,6 @@
 </html>
 
 <style>
-    @import url("./CSS/MenuCoulissant.css");
     @import url("./CSS/Publication.css");
+    @import url("./CSS/MenuCoulissant.css");
 </style>
