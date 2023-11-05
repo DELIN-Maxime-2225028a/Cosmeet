@@ -18,6 +18,7 @@ if (isset($A_vue['reussite'])) {
     <div class="Inscription">
         <div id="formulaire">
 
+            <!-- Formulaire d'inscription -->
             <form method="POST" action="./index.php?url=Inscription/traiterFormulaire" enctype="multipart/form-data">
 
                 <div id="Onglets">
@@ -31,12 +32,14 @@ if (isset($A_vue['reussite'])) {
 
                 <button class="boutonLog" name="boutonLog" type="submit">Valider</button>
                 <p>Vous avez déjà un compte ? <a href="./index.php?url=Connexion" class="lien-connexion">Connectez-vous</a></p>
+
+                <!-- Affichage de la condition (réussite ou erreur) -->
                 <h1 style="color: red;">
                     <?php echo $condition ?>
                 </h1>
 
             </form>
-            
+
         </div>
     </div>
 </body>
