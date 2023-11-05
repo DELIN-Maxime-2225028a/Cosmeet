@@ -49,7 +49,7 @@ class ControleurUtilisateur {
                         "date_inscription" => $O_Utilisateur -> getDateinscription($pseudo),
                         "date_derniere_connexion" => date('y-m-d H:i:s')
                     );
-                    header('Location: ../Cosmeet/index.php?url=Utilisateur');
+                    header('Location: ./index.php?url=Utilisateur');
                     exit;
                 }   
         }

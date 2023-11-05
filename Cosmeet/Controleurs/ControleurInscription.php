@@ -30,7 +30,7 @@ class ControleurInscription {
 
                     );
                     $O_inscription -> inscription($pseudo,$email,$mdp1);
-                    header('Location: ../Cosmeet/index.php?url=Accueil');
+                    header('Location: ./index.php?url=Accueil');
                     exit();
                 }
             

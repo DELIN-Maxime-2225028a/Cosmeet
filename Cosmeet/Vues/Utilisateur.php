@@ -25,7 +25,7 @@ if (isset($A_vue['reussite'])) {
         </div>
 
         <button class="modal-btn modal-trigger">Modifier le Pseudonyme</button>
-        <button id="actions" onclick="window.location.href='../Cosmeet/index.php?url=Utilisateur/deco'">Déconnexion</button>
+        <button id="actions" onclick="window.location.href='./index.php?url=Utilisateur/deco'">Déconnexion</button>
 
         <h1 style="color: red;">
             <?php echo $condition ?>
@@ -39,7 +39,7 @@ if (isset($A_vue['reussite'])) {
             <button aria-label="close modal" class="close-modal modal-trigger">X</button>
             <h1 id="modalTitle">Modifier votre Pseudonyme </h1>
 
-            <form method="post" action="../Cosmeet/index.php?url=Utilisateur/modifier" enctype="multipart/form-data">
+            <form method="post" action="./index.php?url=Utilisateur/modifier" enctype="multipart/form-data">
                 <input type="text" name="pseudo" placeholder="Pseudonyme" required>
                 <input type="text" name="email" placeholder="Email" required>
                 <input type="password" name="mdp" placeholder="Mot de passe pour confirmer" required>

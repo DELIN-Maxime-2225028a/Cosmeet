@@ -18,9 +18,9 @@ if (isset($A_vue['reussite'])) {
     <div class="ModifierCom">
         <div id="formulaire">
 
-            <form method="POST" action="../Cosmeet/index.php?url=ModifierCom/modifierCom" enctype="multipart/form-data">
+            <form method="POST" action="./index.php?url=ModifierCom/modifierCom" enctype="multipart/form-data">
                 <div id="Onglets">
-                    <h3><a id="Retour" href="../Cosmeet/index.php?url=Accueil">RETOUR</a></h3>
+                    <h3><a id="Retour" href="./index.php?url=Accueil">RETOUR</a></h3>
                 </div>
                 <h1>Modifier Commentaire</h1>
                 <textarea name="commentaire" placeholder="COMMENTAIRE" required><?php echo $commentaire['commentaire']; ?></textarea></br>
@@ -28,7 +28,7 @@ if (isset($A_vue['reussite'])) {
                 <button type="submit">Modifier</button>
             </form>
 
-            <form method="POST" action="../Cosmeet/index.php?url=ModifierCom/suprimerCom" enctype="multipart/form-data">
+            <form method="POST" action="./index.php?url=ModifierCom/suprimerCom" enctype="multipart/form-data">
                 <input type="hidden" name="id_commentaire" value="<?= $commentaire['id_commentaire'] ?>">
                 <button type="submit">Supprimer</button>
             </form>

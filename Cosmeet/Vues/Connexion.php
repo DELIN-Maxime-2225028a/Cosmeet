@@ -18,10 +18,10 @@ if (isset($A_vue['reussite'])) {
     <div class="Connexion">
         <div id="formulaire">
 
-            <form method="POST" action="../Cosmeet/index.php?url=Connexion/verifierUtilisateur" enctype="multipart/form-data">
+            <form method="POST" action="./index.php?url=Connexion/verifierUtilisateur" enctype="multipart/form-data">
 
                 <div id="Onglets">
-                    <h3><a id="Connexion">SE CONNECTER</a> <a id="Inscription" href="../Cosmeet/index.php?url=Inscription"> S'INSCRIRE</a></h3>
+                    <h3><a id="Connexion">SE CONNECTER</a> <a id="Inscription" href="./index.php?url=Inscription"> S'INSCRIRE</a></h3>
                 </div>
 
                 <input type="text" name="pseudo" placeholder="PSEUDO" required>

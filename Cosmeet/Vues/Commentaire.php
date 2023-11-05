@@ -18,10 +18,10 @@ if (isset($A_vue['reussite'])) {
     <div class="Commentaire">
         <div id="formulaire">
 
-            <form method="POST" action="../Cosmeet/index.php?url=Commentaire/addCommentaire" enctype="multipart/form-data">
+            <form method="POST" action="./index.php?url=Commentaire/addCommentaire" enctype="multipart/form-data">
 
                 <div id="Onglets">
-                    <h3><a id="Retour" href="../Cosmeet/index.php?url=Accueil">RETOUR</a></h3>
+                    <h3><a id="Retour" href="./index.php?url=Accueil">RETOUR</a></h3>
                 </div>
 
                 <textarea name="commentaire" placeholder="COMMENTAIRE" required></textarea>

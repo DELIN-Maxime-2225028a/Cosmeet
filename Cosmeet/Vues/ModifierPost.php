@@ -17,10 +17,10 @@ if (isset($A_vue['reussite'])) {
 <body>
     <div class="ModifierPost">
         <div id="formulaire">
-            <form method="POST" action="../Cosmeet/index.php?url=ModifierPost/modifierPost" enctype="multipart/form-data">
+            <form method="POST" action="./index.php?url=ModifierPost/modifierPost" enctype="multipart/form-data">
 
                 <div id="Onglets">
-                    <h3><a id="Retour" href="../Cosmeet/index.php?url=Accueil">RETOUR</a></h3>
+                    <h3><a id="Retour" href="./index.php?url=Accueil">RETOUR</a></h3>
                 </div>
                 <h1>Modfier Publication</h1>
                 <input type="text" name="titre" placeholder="TITRE" required value="<?php echo $publication['titre']; ?>"></br>
@@ -37,7 +37,7 @@ if (isset($A_vue['reussite'])) {
                 <button type="submit">Modifier</button>
             </form>
 
-            <form method="POST" action="../Cosmeet/index.php?url=ModifierPost/suprimerPost" enctype="multipart/form-data">
+            <form method="POST" action="./index.php?url=ModifierPost/suprimerPost" enctype="multipart/form-data">
                 <input type="hidden" name="id_publication" value="<?= $publication['id_publication'] ?>">
                 <button type="submit">Supprimer</button>
             </form>

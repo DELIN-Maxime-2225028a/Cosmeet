@@ -1,4 +1,4 @@
-<?php require_once '../Cosmeet/Controleurs/ControleurPublication.php'; ?>
+<?php require_once './Controleurs/ControleurPublication.php'; ?>
 
 <!DOCTYPE html>
 <html style="font-size: 16px;" lang="fr">
@@ -25,10 +25,10 @@
         </p>
 
         <?php if ($_SESSION['utilisateur']['email'] == $publication['auteur']) : ?>
-            <button onclick="window.location.href='../Cosmeet/index.php?url=ModifierPost&id_publication=<?php echo $publication['id_publication']; ?>'">Modifier/Suprimer</button>
+            <button onclick="window.location.href='./index.php?url=ModifierPost&id_publication=<?php echo $publication['id_publication']; ?>'">Modifier/Suprimer</button>
         <?php endif; ?>
 
-        <button id="add-comment-button" onclick="window.location.href='../Cosmeet/index.php?url=Commentaire&id_publication=<?php echo $publication['id_publication']; ?>'">Ajouter un commentaire</button>
+        <button id="add-comment-button" onclick="window.location.href='./index.php?url=Commentaire&id_publication=<?php echo $publication['id_publication']; ?>'">Ajouter un commentaire</button>
         <button class="toggle-comments-button">Commentaires</button>
 
         <div class="commentaires" style="display: none;">
