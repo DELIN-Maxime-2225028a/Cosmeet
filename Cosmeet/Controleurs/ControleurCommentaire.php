@@ -4,8 +4,6 @@ require_once 'Modele/CommentaireModels.php';
 
 class ControleurCommentaire
 {
-
-    // Fonction par défaut qui redirige vers addCommentaire.
     public function defautAction()
     {
         $this->addCommentaireAction();
