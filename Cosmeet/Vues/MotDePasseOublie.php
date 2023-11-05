@@ -27,11 +27,12 @@ if (isset($A_vue['reussite'])) {
                 <input type="text" name="pseudo" placeholder="PSEUDO" required>
                 <input type="email" name="email" placeholder="E-MAIL" required>
                 <input type="password" name="mdp1" placeholder="NOUVEAU MOT DE PASSE" required>
-                <input type="password" name="mdp2" placeholder="CONFIRMER NOUVEAU LE MOT DE PASSE" required>
+                <input type="password" name="mdp2" placeholder="CONFIRMER DE NOUVEAU LE MOT DE PASSE" required>
                 <button class="boutonLog" name="boutonLog" type="submit">Valider</button>
 
             </form>
 
+            <!-- Affichage de la condition (réussite ou erreur) -->
             <h1 style="color: red;">
                 <?php echo $condition ?>
             </h1>
