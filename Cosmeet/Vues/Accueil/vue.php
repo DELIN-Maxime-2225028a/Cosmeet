@@ -40,14 +40,16 @@
 
     <!-- Conteneur pour les catégories -->
     <div id="categories"></div>
-
-    <?php if ($_SESSION['utilisateur']['user_type'] == "admin") : ?>
-        <form method="POST" action="./index.php?url=Accueil/ajouterCategorie" enctype="multipart/form-data">
-            <input type="text" name="nom_categorie">
-            <textarea name="description_categorie"></textarea>
-            <button id="bouton_utile">Ajouter/Modifier</button>
-        </form>
-    <?php endif; ?>
+    
+    <div class=categorie>
+        <?php if ($_SESSION['utilisateur']['user_type'] == "admin") : ?>
+            <form method="POST" action="./index.php?url=Accueil/ajouterCategorie" enctype="multipart/form-data">
+                <input type="text" name="nom_categorie">
+                <textarea name="description_categorie"></textarea>
+                <button id="bouton_utile">Ajouter/Modifier</button>
+            </form>
+        <?php endif; ?>
+    </div>
 
     <button id="Afficher_plus_categories" class="Afficher_plus">Afficher plus</button>
     <button id="Afficher_moins_categories" class="Afficher_moins" style="display: none;">Afficher moins</button>
