@@ -91,4 +91,38 @@ class AccueilModels
         $stmt->execute();
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
+
+    // Fonction pour ajouter une nouvelle catégorie ou mettre à jour une catégorie existante.
+    public function ajouterCategorie($nom_categorie, $description_categorie) {
+        $query = "SELECT * FROM categories WHERE nom_categorie = :nom_categorie";
+        $stmt = $this->pdo->getPdo()->prepare($query);
+        $stmt->bindValue(':nom_categorie', $nom_categorie);
+        $stmt->execute();
+        $categorie = $stmt->fetch(PDO::FETCH_ASSOC);
+        $S_table = 'categories';
+    
+        if ($categorie) {
+            $data = [
+                'description_categorie' => $description_categorie,
+                'nom_categorie' => $nom_categorie
+            ];
+            $where = "nom_categorie = :nom_categorie";
+            $this->pdo->update($S_table, $data, $where);
+        } 
+        else {
+            $query = "SELECT MAX(id_categorie) AS max_id FROM categories";
+            $stmt = $this->pdo->getPdo()->prepare($query);
+            $stmt->execute();
+            $max_id = $stmt->fetch(PDO::FETCH_ASSOC)['max_id'];
+    
+            $new_id = $max_id + 1;
+    
+            $parametres = [
+                'id_categorie' => $new_id,
+                'nom_categorie' => $nom_categorie, 
+                'description_categorie' => $description_categorie
+            ];
+            $this->pdo->insert($S_table, $parametres);
+        }
+    }
 }

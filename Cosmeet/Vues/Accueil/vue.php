@@ -3,6 +3,11 @@
 
 <head>
     <title>Cosmeet</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="L'accueil de Cosmeet, ou l'on trouve les categories et les publications">
+    <meta name="keywords" content="espace, accueil, réseau social, Cosmeet">
 </head>
 
 <body>
@@ -35,6 +40,15 @@
 
     <!-- Conteneur pour les catégories -->
     <div id="categories"></div>
+
+    <?php if ($_SESSION['utilisateur']['user_type'] == "admin") : ?>
+        <form method="POST" action="./index.php?url=Accueil/ajouterCategorie" enctype="multipart/form-data">
+            <input type="text" name="nom_categorie">
+            <textarea name="description_categorie"></textarea>
+            <button id="bouton_utile">Ajouter/Modifier</button>
+        </form>
+    <?php endif; ?>
+
     <button id="Afficher_plus_categories" class="Afficher_plus">Afficher plus</button>
     <button id="Afficher_moins_categories" class="Afficher_moins" style="display: none;">Afficher moins</button>
 

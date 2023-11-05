@@ -53,6 +53,17 @@ final class ControleurAccueil
         }
     }
 
+    public function ajouterCategorieAction()
+{
+    $nom_categorie = $_POST['nom_categorie'];
+    $description_categorie = $_POST['description_categorie'];
+    $model = new AccueilModels();
+    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+        $model->ajouterCategorie($nom_categorie, $description_categorie);
+        Vue::montrer('Accueil/vue');
+    }
+}
+
     // Fonction pour afficher la page d'accueil.
     public function accueil()
     {
