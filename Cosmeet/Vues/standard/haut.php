@@ -8,10 +8,14 @@
         <h3>
             <a id="acceuil" href="./index.php?url=Accueil">ACCUEIL</a></br>
             <a id="utilisateur" href="./index.php?url=Utilisateur">COMPTE</a></br>
-            <a id="utilisateur" href="./index.php?url=Connexion">CONNEXION</a>
-            <a id="acceuil" href="./index.php?url=Inscription">INSCRIPTION</a></br>
-            <a id="acceuil" href="./index.php?url=MotDePasseOublier">MOT DE PASSE OUBLIER</a></br>
         </h3>
+        <h4>
+            <a id="acceuil" href="./index.php?url=Inscription">INSCRIPTION</a></br>
+            <a id="utilisateur" href="./index.php?url=Connexion">CONNEXION</a></br>
+        </h4>
+        <h5>
+            <a id="acceuil" href="./index.php?url=MotDePasseOublie">MOT DE PASSE OUBLIÉ</a></br>
+        </h5>
         
         <input type="text" id="search" placeholder="Recherche...">
         <button id="searchButton">Rechercher</button>

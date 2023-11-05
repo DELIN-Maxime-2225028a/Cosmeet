@@ -1,7 +1,7 @@
 <?php
 require_once 'Noyau/Connection.php';
 
-class MotDePasseOublierModels
+class MotDePasseOublieModels
 {
     private $pdo;
     public function __construct()
@@ -35,17 +35,27 @@ class MotDePasseOublierModels
         return $date_inscription;
     }
 
+    public function getUserType($pseudo){
+        $query = "SELECT user_type FROM utilisateurs WHERE pseudonyme = :pseudo";
+        $stmt = $this->pdo->getPdo()->prepare($query);
+        $stmt->bindValue(':pseudo', $pseudo);
+        $stmt->execute();
+        $email = $stmt->fetchColumn();
+        return $email;
+    }
+
     public function modifiermdp($pseudo,$email,$mdp1){
+        $mdp1 = password_hash($mdp1, PASSWORD_DEFAULT);
         $S_table = "utilisateurs";
         $data = [
             "pseudonyme" => $pseudo,
             "email" => $email,
             "mot_de_passe" => $mdp1,
             "date_inscription" => $this -> getDateInscription($email),
-            "date_derniere_connexion" => date('y-m-d H:i:s')
+            "date_derniere_connexion" => date('y-m-d H:i:s'),
+            "user_type" => $this->getUserType($pseudo)
         ];
-        $where = "pseudonyme = :$pseudo";
-        $data['$pseudo'] = $pseudo;
+        $where = "pseudonyme = '$pseudo'";
 
         return $this->pdo->update($S_table, $data, $where);
     }

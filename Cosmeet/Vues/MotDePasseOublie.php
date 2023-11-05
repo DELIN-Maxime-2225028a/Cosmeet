@@ -15,12 +15,12 @@ if (isset($A_vue['reussite'])) {
 </head>
 
 <body>
-    <div class="MotDePasseOublier">
+    <div class="MotDePasseOublie">
         <div id="formulaire">
-            <form method="POST" action="./index.php?url=MotDePasseOublier/motDePasseOublier" enctype="multipart/form-data">
+            <form method="POST" action="./index.php?url=MotDePasseOublie/MotDePasseOublie" enctype="multipart/form-data">
 
                 <div id="Onglets">
-                    <h3><a id="Retour" href="./index.php?url=Accueil">RETOUR</a></h3>
+                    <h3><a id="Retour" href="./index.php?url=Connexion">RETOUR</a></h3>
                 </div>
 
                 <h1>Mot de passe Oublier</h1>
@@ -43,6 +43,6 @@ if (isset($A_vue['reussite'])) {
 </html>
 
 <style>
-    @import url("./CSS/MotDePasseOublier.css");
+    @import url("./CSS/MotDePasseOublie.css");
     @import url("./CSS/MenuCoulissant.css");
 </style>

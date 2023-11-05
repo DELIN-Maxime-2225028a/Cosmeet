@@ -28,6 +28,8 @@ if (isset($A_vue['reussite'])) {
                 <input type="password" name="mdp1" placeholder="MOT DE PASSE" required>
                 <button class="boutonLog" name="boutonLog" type="submit">Valider</button>
 
+                <a href="./index.php?url=MotDePasseOublie" class="password-forgot">Mot de passe oublié ?</a>
+
                 <h1 style="color: red;">
                     <?php echo $condition ?>
                 </h1>
