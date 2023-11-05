@@ -1,17 +1,23 @@
 <?php
-require_once 'Modele/PublicationModels.php';
-class ControleurPublication {
 
-    public function defautAction() {
+require_once 'Modele/PublicationModels.php';
+
+class ControleurPublication
+{
+
+    public function defautAction()
+    {
         $this->addPublicationAction();
     }
 
-    public function addPublicationAction() {
+    // Fonction qui ajoute une nouvelle publication dans la base de données.
+    public function addPublicationAction()
+    {
         $titre = $_POST['titre'];
         $message = $_POST['message'];
-        $nom_categorie = $_POST['categorie']; 
+        $nom_categorie = $_POST['categorie'];
         $O_ajoutpublication = new PublicationModels();
-    
+
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $email = $_SESSION['utilisateur']['email'];
             if ($O_ajoutpublication->compteExiste($email)) {
@@ -22,8 +28,10 @@ class ControleurPublication {
             }
         }
     }
-    
-    public function getPseudo($email){
+
+    // Fonction pour récupérer un pseudo.
+    public function getPseudo($email)
+    {
         $model = new PublicationModels();
         $pseudo = $model->getPseudo($email);
         return $pseudo;

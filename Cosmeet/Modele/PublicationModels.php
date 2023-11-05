@@ -1,4 +1,5 @@
 <?php
+
 require_once 'Noyau/Connection.php';
 
 class PublicationModels
@@ -6,9 +7,10 @@ class PublicationModels
     private $pdo;
     public function __construct()
     {
-        $this->pdo = Connection::getInstance();     
+        $this->pdo = Connection::getInstance();
     }
 
+    // Fonction qui ajoute une nouvelle publication dans la base de données.
     public function addPublication($titre, $message, $nom_categorie = NULL)
     {
         $query = "SELECT MAX(id_publication) FROM publications";
@@ -29,8 +31,10 @@ class PublicationModels
         ];
         return $this->pdo->insert($S_table, $A_parametres);
     }
-    
-    public function getPseudo($email){
+
+    // Fonction pour récupérer un pseudo.
+    public function getPseudo($email)
+    {
         $query = "SELECT pseudonyme FROM utilisateurs WHERE email = :email";
         $stmt = $this->pdo->getPdo()->prepare($query);
         $stmt->bindValue(':email', $email);
@@ -39,7 +43,9 @@ class PublicationModels
         return $pseudo;
     }
 
-    public function compteExiste($email){
+    // Fonction qui vérifie si un compte existe déja.
+    public function compteExiste($email)
+    {
         $query = "SELECT COUNT(*) FROM utilisateurs WHERE email = :email";
         $stmt = $this->pdo->getPdo()->prepare($query);
         $stmt->bindValue(':email', $email);
@@ -47,20 +53,4 @@ class PublicationModels
         $count = $stmt->fetchColumn();
         return $count > 0;
     }
-    
-    // public function addCategorie($nom_categorie, $description_categorie)
-    // {
-    //     $query = "SELECT MAX(id_categorie) FROM categories";
-    //     $stmt = $this->pdo->getPdo()->prepare($query);
-    //     $stmt->execute();
-    //     $lastId = $stmt->fetchColumn();
-    //     $newId = $lastId + 1;
-    //     $S_table = "categories";
-    //     $A_parametres = [
-    //         "id_categorie" => $newId,
-    //         "nom_categorie" => $nom_categorie ?: NULL,
-    //         "description_categorie" => $description_categorie,
-    //     ];
-    //     return $this->pdo->insert($S_table, $A_parametres);
-    // }
 }

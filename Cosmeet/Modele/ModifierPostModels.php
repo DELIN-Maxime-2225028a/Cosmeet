@@ -1,4 +1,5 @@
 <?php
+
 require_once 'Noyau/Connection.php';
 
 class ModifierPostModels
@@ -9,6 +10,7 @@ class ModifierPostModels
         $this->pdo = Connection::getInstance();
     }
 
+    // Fonction pour modifier un post existant dans la base de données.
     public function modifierPost($id_publication, $titre, $message, $nom_categorie = NULL)
     {
         if ($_SESSION['utilisateur']['user_type'] == "admin") {
@@ -29,13 +31,16 @@ class ModifierPostModels
 
         return $this->pdo->update($S_table, $data, $where);
     }
-    
-    public function SuprimerPost($id_publication){
+
+    // Fonction pour supprimer un post de la base de données.
+    public function SuprimerPost($id_publication)
+    {
         $S_table = "publications";
         $where = "id_publication = $id_publication";
-        return $this->pdo->delete($S_table,$where);
+        return $this->pdo->delete($S_table, $where);
     }
 
+    // Fonction pour obtenir l'id_publication d'une publication.
     public function getPublicationById($id_publication)
     {
         $sql = "SELECT * FROM publications WHERE id_publication = :id_publication";
@@ -44,14 +49,18 @@ class ModifierPostModels
         return $stmt->fetch();
     }
 
-    public function getCategories() {
+    // Fonction pour obtenir la catégorie d'une publication.
+    public function getCategories()
+    {
         $sql = "SELECT * FROM categories";
         $stmt = $this->pdo->getPdo()->prepare($sql);
         $stmt->execute();
         return $stmt->fetchAll();
     }
 
-    public function getCommentaireIds($id_publication){
+    // Fonction qui obtient les identifiants des commentaires liés à une publication.
+    public function getCommentaireIds($id_publication)
+    {
         $query = "SELECT id_commentaire FROM commentaires WHERE id_publication = :id_publication";
         $stmt = $this->pdo->getPdo()->prepare($query);
         $stmt->bindValue(':id_publication', $id_publication);

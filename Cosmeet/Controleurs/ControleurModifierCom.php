@@ -1,12 +1,17 @@
 <?php
+
 require_once 'Modele/ModifierComModels.php';
 
-class ControleurModifierCom {
-    public function defautAction() {
+class ControleurModifierCom
+{
+    public function defautAction()
+    {
         $this->modifierComAction();
     }
 
-    public function modifierComAction() {
+    // Fonction qui gère la modification d'un commentaire.
+    public function modifierComAction()
+    {
         $O_modifierCom = new ModifierComModels();
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $id_commentaire = $_POST['id_commentaire'];
@@ -16,16 +21,18 @@ class ControleurModifierCom {
         } else if ($_SERVER['REQUEST_METHOD'] === 'GET') {
             $id_commentaire = $_GET['id_commentaire'];
             $commentaire = $O_modifierCom->getCommentaireById($id_commentaire);
-            Vue::montrer("ModifierCom",array('commentaire' => $commentaire));
+            Vue::montrer("ModifierCom", array('commentaire' => $commentaire));
         }
     }
 
-    public function suprimerComAction($id_commentaire){
+    // Fonction qui gère la suppression d'un commentaire.
+    public function suprimerComAction($id_commentaire)
+    {
         $O_suprimerCom = new ModifierComModels();
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $id_commentaire = $_POST['id_commentaire'];
             $O_suprimerCom->SuprimerCom($id_commentaire);
             header('Location: index.php?url=Accueil');
         }
-    }  
+    }
 }

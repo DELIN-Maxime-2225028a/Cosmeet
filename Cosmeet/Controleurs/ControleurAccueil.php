@@ -4,7 +4,6 @@ require_once 'Modele/AccueilModels.php';
 
 final class ControleurAccueil
 {
-    // Fonction par défaut pour le contrôleur d'accueil.
     public function defautAction()
     {
         $this->accueil();
