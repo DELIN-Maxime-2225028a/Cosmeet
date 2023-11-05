@@ -1,4 +1,5 @@
 <?php
+
 require_once 'Noyau/Connection.php';
 
 class ModifierComModels
@@ -9,6 +10,7 @@ class ModifierComModels
         $this->pdo = Connection::getInstance();
     }
 
+    // Fonction pour modifier un commentaire dans la base de données.
     public function modifierCom($id_commentaire, $commentaire)
     {
         $auteur = $_SESSION['utilisateur']['email'];
@@ -24,12 +26,15 @@ class ModifierComModels
         return $this->pdo->update($S_table, $data, $where);
     }
 
-    public function SuprimerCom($id_commentaire){
+    // Fonction pour supprimer un commentaire de la base de données.
+    public function SuprimerCom($id_commentaire)
+    {
         $S_table = "commentaires";
         $where = "id_commentaire = $id_commentaire";
-        return $this->pdo->delete($S_table,$where);
+        return $this->pdo->delete($S_table, $where);
     }
 
+    // Fonction pour récupérer un commentaire spécifique par son ID.
     public function getCommentaireById($id_commentaire)
     {
         $sql = "SELECT * FROM commentaires WHERE id_commentaire = :id_commentaire";
