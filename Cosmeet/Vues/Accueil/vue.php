@@ -17,7 +17,7 @@
             <button aria-label="close modal" class="close-modal modal-trigger">X</button>
             <h1 id="modalTitle">Publication</h1>
 
-            <form method="POST" action="../Cosmeet/index.php?url=Publication/addPublication" enctype="multipart/form-data">
+            <form method="POST" action="./index.php?url=Publication/addPublication" enctype="multipart/form-data">
                 <input type="text" name="titre" placeholder="TITRE" required>
                 <textarea name="message" placeholder="MESSAGE" required></textarea>
 

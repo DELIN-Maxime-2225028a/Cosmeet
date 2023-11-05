@@ -21,7 +21,7 @@ class ControleurConnexion {
                         "date_inscription" => $O_connexion -> getDateInscription($pseudo),
                         "date_derniere_connexion" => date('y-m-d H:i:s')
                     );
-                    header('Location: ../Cosmeet/index.php?url=Accueil');
+                    header('Location: ./index.php?url=Accueil');
                     exit();
                 }
                 else{
