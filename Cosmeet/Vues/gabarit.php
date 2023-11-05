@@ -14,6 +14,5 @@
 </body>
 
 </html>
+
 <script src="./JavaScript/MenuCoulissant.js"></script>
-<style>
-</style>
