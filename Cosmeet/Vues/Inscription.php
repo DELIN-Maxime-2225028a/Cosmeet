@@ -30,7 +30,7 @@ if (isset($A_vue['reussite'])) {
                 <input type="password" name="mdp2" placeholder="CONFIRMER LE MOT DE PASSE" required>
 
                 <button class="boutonLog" name="boutonLog" type="submit">Valider</button>
-
+                <p>Vous avez déjà un compte ? <a href="./index.php?url=Connexion" class="lien-connexion">Connectez-vous</a></p>
                 <h1 style="color: red;">
                     <?php echo $condition ?>
                 </h1>
