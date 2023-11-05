@@ -14,8 +14,15 @@
             <p>Date inscription : <?php echo $A_vue['DateInscription'] ?></p>
             <p>Dernier connection : <?php echo $A_vue['DateConnexion'] ?></p>
 
+            <?php if ($_SESSION['utilisateur']['user_type'] == "admin") : ?>
+                <form method="POST" action="./index.php?url=Compte/supprimerCompte" enctype="multipart/form-data">
+                    <input type="hidden" name="pseudo" value="<?= $A_vue['pseudo'] ?>">
+                    <input type="hidden" name="email" value="<?= $A_vue['email'] ?>">
+                    <button type="submit">Supprimer</button>
+                </form>
+            <?php endif ?>
         </div>
-    </div>    
+    </div>
 </body>
 
 </html>

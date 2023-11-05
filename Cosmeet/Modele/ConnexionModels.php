@@ -47,6 +47,15 @@ class ConnexionModels
         return $email;
     }
 
+    public function getUserType($pseudo){
+        $query = "SELECT user_type FROM utilisateurs WHERE pseudonyme = :pseudo";
+        $stmt = $this->pdo->getPdo()->prepare($query);
+        $stmt->bindValue(':pseudo', $pseudo);
+        $stmt->execute();
+        $email = $stmt->fetchColumn();
+        return $email;
+    }
+
     public function getDateInscription($pseudo){
         $query = "SELECT date_inscription FROM utilisateurs WHERE pseudonyme = :pseudo";
         $stmt = $this->pdo->getPdo()->prepare($query);

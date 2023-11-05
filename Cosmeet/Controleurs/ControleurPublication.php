@@ -11,10 +11,15 @@ class ControleurPublication {
         $message = $_POST['message'];
         $nom_categorie = $_POST['categorie']; 
         $O_ajoutpublication = new PublicationModels();
-
+    
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            $O_ajoutpublication->addPublication($titre, $message, $nom_categorie);
-            header('Location: index.php?url=Accueil');
+            $email = $_SESSION['utilisateur']['email'];
+            if ($O_ajoutpublication->compteExiste($email)) {
+                $O_ajoutpublication->addPublication($titre, $message, $nom_categorie);
+                header('Location: index.php?url=Accueil');
+            } else {
+                header('Location: index.php?url=Connexion');
+            }
         }
     }
     

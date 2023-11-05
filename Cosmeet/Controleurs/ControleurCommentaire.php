@@ -12,9 +12,14 @@ class ControleurCommentaire {
             $id_publication = $_POST['id_publication'];
             
             $model = new CommentaireModels();
-            $model->addCommentaire($commentaire, $id_publication);
-            
-            header('Location: index.php?url=Accueil');
+            $email = $_SESSION['utilisateur']['email'];
+            if ($model->compteExiste($email)) {
+                $model->addCommentaire($commentaire, $id_publication);
+                header('Location: index.php?url=Accueil');
+            } else {
+                // Rediriger l'utilisateur vers la page de connexion
+                header('Location: index.php?url=Connexion');
+            }
         } else {
             Vue::montrer("Commentaire");
         }

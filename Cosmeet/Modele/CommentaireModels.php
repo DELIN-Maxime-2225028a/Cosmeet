@@ -37,4 +37,13 @@ class CommentaireModels
         $pseudo = $stmt->fetchColumn();
         return $pseudo;
     }
+
+    public function compteExiste($email){
+        $query = "SELECT COUNT(*) FROM utilisateurs WHERE email = :email";
+        $stmt = $this->pdo->getPdo()->prepare($query);
+        $stmt->bindValue(':email', $email);
+        $stmt->execute();
+        $count = $stmt->fetchColumn();
+        return $count > 0;
+    }
 }

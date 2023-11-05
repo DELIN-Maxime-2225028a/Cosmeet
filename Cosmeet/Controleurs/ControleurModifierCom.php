@@ -26,6 +26,6 @@ class ControleurModifierCom {
             $id_commentaire = $_POST['id_commentaire'];
             $O_suprimerCom->SuprimerCom($id_commentaire);
             header('Location: index.php?url=Accueil');
-    }
-}
+        }
+    }  
 }
