@@ -1,72 +1,72 @@
 body {
-    font-family: Arial, sans-serif;
-    background-color: #111;
-    color: white;
+    font-size: 16px;
+    background: url('https://st2.depositphotos.com/1177973/7022/i/450/depositphotos_70226169-stock-photo-dark-starry-sky-background.jpg') no-repeat center center fixed;
+    background-size: cover;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-image: url('https://www.alain-bensoussan.com/wp-content/uploads/2017/05/34233891.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
+    margin: 0;
+    padding: 0;
+}
+
+.Connexion {
+    width: 300px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
 #formulaire {
-    width: 450px;
-    padding: 40px;
-    background-color: rgba(0, 0, 0, 0.7);
-    border-radius: 10px;
-    box-shadow: 0px 0px 15px 5px rgba(0, 0, 0, 0.6);
-}
-
-#formulaire h3 {
-    font-size: 32px; 
-    font-weight: bold; 
-    color: #FFFFFF; 
-    margin-bottom: 20px; 
     text-align: center;
 }
 
-input[type="text"],
-input[type="password"] {
-    width: 100%;
-    padding: 15px;
-    border: none;
-    background-color: rgba(255, 255, 255, 0.1);
-    color: #ffffff;
+h3 {
+    margin: 0;
+    padding: 0;
+}
+
+a#Connexion, a#Inscription {
+    text-decoration: none;
+    color: #333;
+    padding: 10px 20px;
+    border: 1px solid #333;
     border-radius: 5px;
-    margin-bottom: 15px;
+    margin: 10px 5px;
+    transition: background-color 0.3s, color 0.3s;
+    display: flex;
+}
+
+a#Connexion:hover, a#Inscription:hover {
+    background-color: #333;
+    color: #fff;
+}
+
+input[type="text"], input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
 }
 
 button.boutonLog {
     width: 100%;
-    padding: 15px;
+    padding: 10px;
+    background-color: #333;
+    color: #fff;
     border: none;
-    background-color: #007BFF;
-    color: #ffffff;
-    cursor: pointer;
     border-radius: 5px;
+    cursor: pointer;
     transition: background-color 0.3s;
-    margin-top: 10px;
 }
 
 button.boutonLog:hover {
-    background-color: #0056b3;
+    background-color: #555;
 }
 
-.password-forgot {
-    color: #007BFF;
-    text-decoration: none;
-    font-weight: bold;
-    display: block;
-    text-align: left;
-    margin-top: 10px;
-}
-
-.password-forgot:hover {
-    text-decoration: underline;
-}
-
-*, *::before, *::after {
-    box-sizing: border-box; 
+h1 {
+    color: red;
+    margin: 10px 0;
 }
