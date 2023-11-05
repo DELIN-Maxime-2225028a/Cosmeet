@@ -32,13 +32,15 @@ if (isset($A_vue['reussite'])) {
         </h1>
 
     </div>
-    
+
     <div class="modal-container">
         <div class="overlay modal-trigger"></div>
         <div class="modal" role="dialog" aria-labelledby="modalTitle" aria-describedby="dialogDesc">
+            <!-- Bouton pour fermer le modal -->
             <button aria-label="close modal" class="close-modal modal-trigger">X</button>
             <h1 id="modalTitle">Modifier votre Pseudonyme </h1>
 
+            <!-- Formulaire pour modifier le pseudonyme -->
             <form method="post" action="./index.php?url=Utilisateur/modifier" enctype="multipart/form-data">
                 <input type="text" name="pseudo" placeholder="Pseudonyme" required>
                 <input type="text" name="email" placeholder="Email" required>

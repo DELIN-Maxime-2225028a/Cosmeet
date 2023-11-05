@@ -10,6 +10,7 @@
         <div class="overlay modal-trigger"></div>
         <div class="modal" role="dialog" aria-labelledby="modalTitle" aria-describedby="dialogDesc">
 
+            <!-- Bouton pour fermer la modal -->
             <button aria-label="close modal" class="close-modal modal-trigger">X</button>
             <h1 id="modalTitle">Publication</h1>
 
