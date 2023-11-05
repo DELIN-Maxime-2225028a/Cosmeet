@@ -7,6 +7,15 @@ body {
   padding: 0;
 }
 
+.categorie {
+  background-color: #fff;
+  padding: 10px ; 
+  margin: 10px auto; 
+  width: 20%;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
 #bouton_utile {
   display: block;
   margin: 0 auto 20px auto;

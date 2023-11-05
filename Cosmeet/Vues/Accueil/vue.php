@@ -21,8 +21,8 @@
 
             <!-- Formulaire pour ajouter une publication -->
             <form method="POST" action="./index.php?url=Publication/addPublication" enctype="multipart/form-data">
-                <input type="text" name="titre" placeholder="TITRE" required>
-                <textarea name="message" placeholder="MESSAGE" required></textarea>
+                <input type="text" name="titre" placeholder="TITRE" required></br>
+                <textarea name="message" placeholder="MESSAGE" required></textarea></br>
 
                 <!-- Sélection de la catégorie de la publication -->
                 <select id="categorie" name="categorie">
@@ -30,7 +30,7 @@
                     <?php foreach ($categories as $categorie) : ?>
                         <option value="<?= $categorie['nom_categorie'] ?>"><?= $categorie['nom_categorie'] ?></option>
                     <?php endforeach; ?>
-                </select>
+                </select> </br>
 
                 <button class="boutonLog" name="boutonLog" type="submit">Publier</button>
             </form>
@@ -40,7 +40,7 @@
 
     <!-- Conteneur pour les catégories -->
     <div id="categories"></div>
-    
+
     <div class=categorie>
         <?php if ($_SESSION['utilisateur']['user_type'] == "admin") : ?>
             <form method="POST" action="./index.php?url=Accueil/ajouterCategorie" enctype="multipart/form-data">
