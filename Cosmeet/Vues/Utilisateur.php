@@ -15,7 +15,7 @@ if (isset($A_vue['reussite'])) {
 </head>
 
 <body>
-    <div class="utilisateur">
+    <div class="Utilisateur">
 
         <div>
             <p>Nom d'utilisateur : <?= $_SESSION['utilisateur']['pseudo'] ?></p>
