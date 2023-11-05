@@ -5,9 +5,10 @@ class CommentaireModels
 
     public function __construct()
     {
-        $this->pdo = Connection::getInstance();     
+        $this->pdo = Connection::getInstance();
     }
 
+    // Fonction pour ajouter un commentaire dans la base de données.
     public function addCommentaire($commentaire, $id_publication)
     {
         $query = "SELECT MAX(id_commentaire) FROM commentaires";
@@ -28,8 +29,10 @@ class CommentaireModels
         ];
         return $this->pdo->insert($S_table, $A_parametres);
     }
-    
-    public function getPseudo($email){
+
+     // Fonction pour récupérer le pseudonyme d'un utilisateur.
+    public function getPseudo($email)
+    {
         $query = "SELECT pseudonyme FROM utilisateurs WHERE email = :email";
         $stmt = $this->pdo->getPdo()->prepare($query);
         $stmt->bindValue(':email', $email);
@@ -38,7 +41,9 @@ class CommentaireModels
         return $pseudo;
     }
 
-    public function compteExiste($email){
+    // Fonction pour vérifier si un compte existe dans la base de données.
+    public function compteExiste($email)
+    {
         $query = "SELECT COUNT(*) FROM utilisateurs WHERE email = :email";
         $stmt = $this->pdo->getPdo()->prepare($query);
         $stmt->bindValue(':email', $email);
