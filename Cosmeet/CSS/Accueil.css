@@ -1,6 +1,7 @@
 body {
   font-family: Arial, sans-serif;
-  background-color: #f0f0f0;
+  background: url(chemin ) no-repeat center center fixed;
+  background-size: cover;
   margin: 0;
   padding: 0;
 }
@@ -14,11 +15,11 @@ body {
   border: none;
   border-radius: 5px;
   font-size: 16px;
-  transition: background-color 0.3s;
+  transition: background-color 0.3s; /* Transition pour l'effet de luminosité */
 }
 
 #bouton_utile:hover {
-  background-color: #45a6e8;
+  background-color: #45a6e8; /* Couleur plus lumineuse au survol */
 }
 
 .Afficher_plus, .Afficher_moins {
@@ -30,9 +31,9 @@ body {
   border: none;
   border-radius: 5px;
   font-size: 16px;
-  transition: background-color 0.3s;
+  transition: background-color 0.3s; /* Transition pour l'effet de luminosité */
 }
 
 .Afficher_plus:hover, .Afficher_moins:hover {
-  background-color: #32c76f;
+  background-color: #32c76f; /* Couleur plus lumineuse au survol */
 }
